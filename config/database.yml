@@ -1,0 +1,17 @@
+# PostgreSQL database configuration
+
+connection: &connection
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: <PG_USERNAME>
+  password: <PG_PASSWORD>
+  timeout: 5000
+
+development:
+  <<: *connection
+  database: rails_development
+
+test:
+  <<: *connection
+  database: rails_test
