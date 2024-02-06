@@ -152,7 +152,7 @@ h3.tagline {
 }
 
 .bi-trash:hover {
-  color: rgb(125, 0, 192);
+  color: rgb(255, 115, 0);
   cursor: pointer;
 }
 
