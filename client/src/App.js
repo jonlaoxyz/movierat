@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { NavigationBar } from './components/NavigationBar';
-import { SearchBar } from './components/SearchBar';
-import { ProgramListItem } from './components/ProgramListItem';
+import { SearchBar } from './components/SearchBar'
+
 
 function App() {
   return (
