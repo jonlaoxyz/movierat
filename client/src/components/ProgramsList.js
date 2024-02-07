@@ -47,10 +47,10 @@ export const ProgramsList = () => {
                         </div>
                       </section>
                       <section className="control">
-                        <i class="bi bi-eye"></i>
-                        <i class="bi bi-heart"></i>
-                        <i class="bi bi-plus-circle"></i>
-                        <i class="bi bi-trash"></i>
+                        <i className="bi bi-eye"></i>
+                        <i className="bi bi-heart"></i>
+                        <i className="bi bi-plus-circle"></i>
+                        <i className="bi bi-trash"></i>
                       </section>
 
                     </div>
@@ -99,10 +99,10 @@ export const ProgramsList = () => {
                         </div>
                       </section>
                       <section className="control">
-                        <i class="bi bi-eye"></i>
-                        <i class="bi bi-heart"></i>
-                        <i class="bi bi-plus-circle"></i>
-                        <i class="bi bi-trash"></i>
+                        <i className="bi bi-eye"></i>
+                        <i className="bi bi-heart"></i>
+                        <i className="bi bi-plus-circle"></i>
+                        <i className="bi bi-trash"></i>
                       </section>
                     </div>
                   </div>
@@ -151,10 +151,10 @@ export const ProgramsList = () => {
                         </div>
                       </section>
                       <section className="control">
-                        <i class="bi bi-eye"></i>
-                        <i class="bi bi-heart"></i>
-                        <i class="bi bi-plus-circle"></i>
-                        <i class="bi bi-trash"></i>
+                        <i className="bi bi-eye"></i>
+                        <i className="bi bi-heart"></i>
+                        <i className="bi bi-plus-circle"></i>
+                        <i className="bi bi-trash"></i>
                       </section>
                     </div>
                   </div>

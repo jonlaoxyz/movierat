@@ -5,11 +5,29 @@ import { ProgramsList } from './ProgramsList';
 export const SearchBar = () => {
 
   const [query, setQuery] = useState("");
+  const [results, setResults] = useState([]);
 
-  const onChange = e => {
-    e.preventDefault();
-    setQuery(e.target.value)
-  }
+  const onChange = (e) => {
+    // e.preventDefault();
+
+    setQuery(e.target.value);
+
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`)
+    
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      console.log("Parsed Data:", data.results);
+      if (!data.errors) {
+        setResults(data.results);
+      } else {
+        setResults([]);
+      }
+    })
+    .catch((error) => console.error("Failed to fetch data:", error));
+
+  };
 
   return (
     <section className="SearchBar container mt-4">
@@ -21,25 +39,38 @@ export const SearchBar = () => {
             <input 
               type="text" 
               className="form-control mr-5" 
-              placeholder="Search..." 
+              placeholder="Search..."
+              value={query}
+              onChange={onChange}
             />
 
-            <button 
+            {/* <button 
               type="submit" 
               className="btn btn-primary rounded ms-3 px-4 fs-4" 
               style={{ backgroundColor: '#7520A5' }}
-              value={query}
-              onChange={onChange}
+              
               >Search
-            </button>
+            </button> */}
 
           </div>
         </form>
         </div>
     </div>
+
+
     <div>
-      <ProgramsList />
-    </div>
+      {results.length > 0 && (
+        <ul>
+          {results.map((movie) => (
+        <li> {movie.title} </li>
+          ))}
+        </ul>
+      )}
+    </div>  
+
 </section>
+
+
+
   )
 }
