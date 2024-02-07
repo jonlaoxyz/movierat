@@ -110,6 +110,9 @@ h3.tagline {
   margin-right: 1em;
 }
 
+
+/* icons - eye, fav, add, delete */
+
 .control {
   position: absolute; /* Set bottom section position to absolute */
   bottom: 0; /* Align bottom of the section to the bottom of the parent container */
