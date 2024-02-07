@@ -9,7 +9,9 @@ export const NavigationBar = () => {
       {/* Logo */}
       <div className="col-md-4">
         <div className="d-flex justify-content-start">
-          <img src="../img/movierat_logo.png" className="img-fluid" alt="movieRAT! logo" />
+          <a href="/">
+          <img src="../img/movierat_logo.png" className="img-fluid" alt="movieRAT! logo"/>
+          </a>
         </div>
       </div>
 
@@ -17,6 +19,7 @@ export const NavigationBar = () => {
       <div className="col-md-8 text-end">
         <p className="Welcome float">Welcome, Mike! | <a href="">Logout</a></p>
         <nav className="navbar navbar-expand-lg navbar-transparent justify-content-end">
+          <a className="nav-link fs-3 me-5" href="/search">Search</a>
           <a className="nav-link fs-3 me-5" href="#">Watchlist</a>
           <a className="nav-link fs-3 me-5" href="#">Favourites</a>
           <a className="nav-link fs-3" href="#">Watched</a>

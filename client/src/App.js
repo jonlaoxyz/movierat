@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { NavigationBar } from './components/NavigationBar';
 import { SearchBar } from './components/SearchBar';
-import { ProgramsList } from './components/ProgramsList';
+import { ProgramListItem } from './components/ProgramListItem';
 
 function App() {
   return (
