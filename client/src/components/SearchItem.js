@@ -2,7 +2,7 @@
 // import axios from 'axios';
 import '../App.css';
 
-export const SearchItem = ({ movie }) => {
+export const SearchItem = ({ movie, addToWatchlist }) => {
   return (
       <section className="Program-List container mt-4">
           <ul className="col-md-12">
@@ -44,7 +44,7 @@ export const SearchItem = ({ movie }) => {
                       <section className="control">
                         <i className="bi bi-eye"></i>
                         <i className="bi bi-heart"></i>
-                        <i className="bi bi-plus-circle"></i>
+                        <i className="bi bi-plus-circle" onClick={() => addToWatchlist(movie)}></i>
                         <i className="bi bi-trash"></i>
                       </section>
 

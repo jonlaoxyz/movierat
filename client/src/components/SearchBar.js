@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../App.css';
 import { SearchItem } from './SearchItem';
 
-export const SearchBar = () => {
+export const SearchBar = ({ setPrograms }) => {
 
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
@@ -28,6 +28,33 @@ export const SearchBar = () => {
     .catch((error) => console.error("Failed to fetch data:", error));
 
   };
+
+  const addToWatchlist = (movie) => {
+    // Fetch additional details for the selected movie
+    fetch(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`)
+      .then((res) => res.json())
+      .then((data) => {
+        const newProgram = {
+          id: data.id, // Ensure each item has a unique ID
+          title: data.title,
+          posterPath: data.poster_path,
+          rating: data.vote_average,
+          runtime: data.runtime,
+          genres: data.genres.map(genre => genre.name).join(', '),
+          release_date: data.release_date,
+          status: 'Released',
+          tagline: data.tagline,
+          overview: data.overview
+        };
+  
+        // Add the newProgram to the programs array using setPrograms
+        setPrograms(prevPrograms => [...prevPrograms, newProgram]);
+      })
+      .catch((error) => console.error("Failed to fetch movie details:", error));
+  };
+
+  
+  
 
   return (
     <section className="SearchBar container mt-4">
@@ -63,7 +90,10 @@ export const SearchBar = () => {
       <ul className="results">
         {results.map((movie) => (
           <li key={movie.id}>
-            <SearchItem movie={movie} />
+            <SearchItem movie={movie}
+            movie={movie} 
+            addToWatchlist={() => addToWatchlist(movie)}
+             />
           </li>
         ))}
       </ul>

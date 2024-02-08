@@ -1,9 +1,9 @@
 import React from 'react';
-import ProgramItem from './ProgramItem'; // Assuming you have created the ProgramItem component
+import ProgramItem from './ProgramItem';
 
 class Watchlist extends React.Component {
   render() {
-    const { programs } = this.props; // Assuming programs is an array of program data
+    const { programs } = this.props;
 
     return (
       <section className="Watchlist container mt-4">
@@ -11,9 +11,9 @@ class Watchlist extends React.Component {
           {programs.map(program => (
             <ProgramItem
               key={program.id} // Ensure each item has a unique key
-              imageSrc={program.imageSrc}
+              imageSrc={program.posterPath} // Adjusted for the new property name
               title={program.title}
-              releaseDate={program.releaseDate}
+              releaseDate={program.release_date} // Adjusted for the new property name
               certification={program.certification}
               release={program.release}
               genres={program.genres}

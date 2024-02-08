@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { NavigationBar } from './components/NavigationBar';
@@ -8,10 +8,10 @@ import Footer from './components/Footer';
 
 
 function App() {
-  const programs = [
+  const [programs, setPrograms] = useState([
     {
       id: 1,
-      imageSrc: "img/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+      posterPath: "img/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
       title: "Interstellar",
       releaseDate: "(2014)",
       certification: "PG",
@@ -23,7 +23,7 @@ function App() {
     },
     {
       id: 2,
-      imageSrc: "img/yFihWxQcmqcaBR31QM6Y8gT6aYV.jpg",
+      posterPath: "img/yFihWxQcmqcaBR31QM6Y8gT6aYV.jpg",
       title: "Die Hard",
       releaseDate: "(1988)",
       certification: "18A",
@@ -35,7 +35,7 @@ function App() {
     },
     {
       id: 3,
-      imageSrc: "img/63N9uy8nd9j7Eog2axPQ8lbr3Wj.jpg",
+      posterPath: "img/63N9uy8nd9j7Eog2axPQ8lbr3Wj.jpg",
       title: "Blade Runner",
       releaseDate: "(1982)",
       certification: "R",
@@ -45,14 +45,14 @@ function App() {
       tagline: "Man has made his match...now it's his problem.",
       overview: "In the smog-choked dystopian Los Angeles of 2019, blade runner Rick Deckard is called out of retirement to terminate a quartet of replicants who have escaped to Earth seeking their creator for a way to extend their short life spans."
     }
-  ];
+  ]);
   return (
     <div className='App'>
       <Router>
         <NavigationBar />
         <Routes>
           <Route path="/search" element={
-              <SearchBar />
+              <SearchBar setPrograms={setPrograms} />
           } />
           <Route path="/watchlist" element={<Watchlist programs={programs} />} />
         </Routes>
