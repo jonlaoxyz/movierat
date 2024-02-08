@@ -5,6 +5,7 @@ import { NavigationBar } from './components/NavigationBar';
 import { SearchBar } from './components/SearchBar';
 import Watchlist from './components/Watchlist';
 import Footer from './components/Footer';
+import { Popular } from './components/Popular';
 
 function App() {
   // Define state to store watchlist items
@@ -20,6 +21,7 @@ function App() {
       <Router>
         <NavigationBar />
         <Routes>
+          <Route path="/" element={<Popular />} />  
           <Route path="/search" element={<SearchBar addToWatchlist={addToWatchlist} />} />
           {/* Pass the watchlist state as a prop to the Watchlist component */}
           <Route path="/watchlist" element={<Watchlist programs={watchlist} />} />

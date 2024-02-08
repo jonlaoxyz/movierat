@@ -167,3 +167,10 @@ h3.tagline {
   color:rgb(179, 179, 179);
   text-align: center;
 }
+
+.popular {
+  color:rgb(179, 179, 179);
+  font-size: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em; 
+}
