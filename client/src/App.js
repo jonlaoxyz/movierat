@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { NavigationBar } from './components/NavigationBar';
 import { SearchBar } from './components/SearchBar'
+import Watchlist from './components/Watchlist';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
           } />
         </Routes>
       </Router>
+      <Footer />
     </div>
   );
 }
