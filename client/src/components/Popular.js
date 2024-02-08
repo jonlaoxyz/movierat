@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {useEffect} from 'react';
+import { PlusCircle } from 'react-bootstrap-icons'; // Import the PlusCircle icon from react-bootstrap-icons library
 
 export const Popular = () => {
   const [results, setResults] = useState([]);
