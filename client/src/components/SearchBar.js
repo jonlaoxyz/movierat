@@ -50,9 +50,9 @@ export const SearchBar = ({ addToWatchlist }) => {
         </div>
       </div>
 
-      <div>
+      <div className="Program-List container mt-4">
         {results.length > 0 && (
-          <ul className="results">
+          <ul className="results col-md-12">
             {results.map((movie) => (
               <li key={movie.id}>
                 <SearchItem

@@ -8,9 +8,9 @@ export const SearchItem = ({ movie, addToWatchlist }) => {
   };
 
   return (
-    <section className="Program-List container mt-4">
-      <ul className="col-md-12">
-        <li>
+    <section>
+      {/* <ul className="col-md-12">
+        <li> */}
           <div className="card">
             <section id="original_header" className="images inner">
               <div className="row">
@@ -18,7 +18,7 @@ export const SearchItem = ({ movie, addToWatchlist }) => {
                   <div className="poster_wrapper">
                     <img
                       className="img-fluid rounded"
-                      src={movie.poster_path ? `https://image.tmdb.org/t/p/w200${movie.poster_path}` : `${process.env.PUBLIC_URL}/img/000000h1.jpg`}
+                      src={movie.poster_path ? `https://image.tmdb.org/t/p/w400${movie.poster_path}` : `${process.env.PUBLIC_URL}/img/000000h1.jpg`}
                       alt={`${movie.title} Poster`}
                     />
                   </div>
@@ -30,11 +30,6 @@ export const SearchItem = ({ movie, addToWatchlist }) => {
                         {movie.title}
                         <span className="release_date">{movie.release_date ? movie.release_date.substring(0, 4) : ''}</span>
                       </h2>
-                      <div className="facts">
-                        {/* <span className="runtime">
-                              2h 49m
-                            </span> */}
-                      </div>
                     </div>
                     <div className="program_info">
                       <h3 className="tagline">Original title: {movie.original_title}</h3>
@@ -46,8 +41,8 @@ export const SearchItem = ({ movie, addToWatchlist }) => {
                   </section>
 
                   <section className="control">
-                    <i className="bi bi-eye"></i>
-                    <i className="bi bi-heart"></i>
+                    {/* <i className="bi bi-eye"></i>
+                    <i className="bi bi-heart"></i> */}
                     <i className="bi bi-plus-circle" onClick={handleAddToWatchlist}></i>
                     <i className="bi bi-trash"></i>
                   </section>
@@ -55,8 +50,8 @@ export const SearchItem = ({ movie, addToWatchlist }) => {
               </div>
             </section>
           </div>
-        </li>
-      </ul>
+        {/* </li>
+      </ul> */}
     </section>
   );
 };

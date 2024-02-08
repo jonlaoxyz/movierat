@@ -11,7 +11,7 @@ class Watchlist extends React.Component {
           {programs.map(movie => (
             <ProgramItem
               key={movie.id} // Ensure each item has a unique key
-              imageSrc={movie.poster_path ? `https://image.tmdb.org/t/p/w200${movie.poster_path}` : `${process.env.PUBLIC_URL}/img/000000h1.jpg`}
+              imageSrc={movie.poster_path ? `https://image.tmdb.org/t/p/w400${movie.poster_path}` : `${process.env.PUBLIC_URL}/img/000000h1.jpg`}
               title={movie.title}
               releaseDate={movie.release_date}
               genres={movie.genres}
