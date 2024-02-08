@@ -19,7 +19,7 @@ const ProgramItem = ({
               <div className="poster_wrapper">
                 <img 
                   className="img-fluid rounded" 
-                  src={imageSrc ? `https://image.tmdb.org/t/p/w400${imageSrc}` : `${process.env.PUBLIC_URL}/img/000000h1.jpg`}
+                  src={imageSrc ? `https://image.tmdb.org/t/p/w400${imageSrc}` : `${process.env.PUBLIC_URL}/img/no-poster-available.jpg`}
                   alt={title} 
                   title={title}
                 />
