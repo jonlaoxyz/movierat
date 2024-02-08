@@ -11,9 +11,9 @@ export const NavigationBar = () => {
       {/* Logo */}
       <div className="col-md-4">
         <div className="d-flex justify-content-start">
-          <a href="/">
+          <NavLink href="/">
           <img src="../img/movierat_logo.png" className="img-fluid" alt="movieRAT! logo"/>
-          </a>
+          </NavLink>
         </div>
       </div>
 

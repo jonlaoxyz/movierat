@@ -2,7 +2,7 @@
 // import axios from 'axios';
 import '../App.css';
 
-export const ProgramListItem = ({ movie }) => {
+export const SearchItem = ({ movie }) => {
   return (
       <section className="Program-List container mt-4">
           <ul className="col-md-12">
