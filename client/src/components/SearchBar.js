@@ -45,7 +45,8 @@ export const SearchBar = ({ addToWatchlist }) => {
           genres: data.genres.map(genre => genre.name).join(', '),
           release_date: data.release_date,
           status: data.status,
-          tagline: data.tagline
+          tagline: data.tagline,
+          overview: data.overview
         };
   
         // Send a POST request to create a new program

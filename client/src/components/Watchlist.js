@@ -35,6 +35,7 @@ function Watchlist() {
             releaseDate={program.release_date}
             status={program.status}
             tagline={program.tagline}
+            overview={program.description}
           />
         ))}
       </ul>

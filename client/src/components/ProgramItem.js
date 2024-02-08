@@ -8,7 +8,7 @@ const ProgramItem = ({
   tagline,
   overview,
   rating // Add rating prop
-}) => {
+}) => {    console.log("Genres:", genres);
   return (
     <li>
       <div className="card">

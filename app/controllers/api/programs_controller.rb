@@ -38,6 +38,7 @@ class Api::ProgramsController < ApplicationController
 
   private
 
+  
   # Use callbacks to share common setup or constraints between actions.
   def set_program
     @program = Program.find(params[:id])
@@ -45,6 +46,6 @@ class Api::ProgramsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def program_params
-    params.require(:program).permit(:title, :poster_image_url, :rating, :runtime, :genres, :release_date, :status, :tagline)
+    params.require(:program).permit(:title, :poster_image_url, :rating, :runtime, :genres, :release_date, :status, :tagline, :overview)
   end
 end
