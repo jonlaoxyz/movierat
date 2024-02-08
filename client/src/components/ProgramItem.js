@@ -30,8 +30,8 @@ const ProgramItem = ({
                 <div className="title">
                   <h2>
                     {title}
-                    <span className="release_date">{releaseDate}</span>
                   </h2>
+                  <h3 className="release_date">Release Date: {releaseDate}</h3>
                   <div className="facts">
                   <span className="genres">{genres}</span>
                     <span className="runtime">{runtime} min</span>

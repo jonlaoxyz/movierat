@@ -26,11 +26,10 @@ export const SearchItem = ({ movie, addToWatchlist }) => {
                     <div className="title">
                       <h2>
                         {movie.title}
-                        <span className="release_date">{movie.release_date ? movie.release_date.substring(0, 4) : ''}</span>
                       </h2>
+                      <h3 className="release_date">Release Date: {movie.release_date ? movie.release_date.substring(0, 4) : ''}</h3>
                     </div>
                     <div className="program_info">
-                      <h3 className="tagline">Original title: {movie.original_title}</h3>
                       <h3 className="header_info">Overview</h3>
                       <div className="overview">
                         <p>{movie.overview}</p>
@@ -39,8 +38,6 @@ export const SearchItem = ({ movie, addToWatchlist }) => {
                   </section>
 
                   <section className="control">
-                    {/* <i className="bi bi-eye"></i>
-                    <i className="bi bi-heart"></i> */}
                     <i className="bi bi-plus-circle" onClick={handleAddToWatchlist}></i>
                     <i className="bi bi-trash"></i>
                   </section>
