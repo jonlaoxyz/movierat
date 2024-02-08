@@ -1,4 +1,6 @@
 class Api::ProgramsController < ApplicationController
+  before_action :set_program, only: [:show, :update, :destroy]
+
   # GET /api/programs
   def index
     @programs = Program.all
@@ -7,7 +9,6 @@ class Api::ProgramsController < ApplicationController
 
   # GET /api/programs/:id
   def show
-    @program = Program.find(params[:id])
     render json: @program
   end
 
@@ -17,29 +18,33 @@ class Api::ProgramsController < ApplicationController
     if @program.save
       render json: @program, status: :created
     else
-      render json: @program.errors, status: :unprocessable_entity
+      render json: { errors: @program.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /api/programs/:id
   def update
-    @program = Program.find(params[:id])
     if @program.update(program_params)
       render json: @program
     else
-      render json: @program.errors, status: :unprocessable_entity
+      render json: { errors: @program.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   # DELETE /api/programs/:id
   def destroy
-    @program = Program.find(params[:id])
     @program.destroy
   end
 
   private
 
+  # Use callbacks to share common setup or constraints between actions.
+  def set_program
+    @program = Program.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
   def program_params
-    params.require(:program).permit(:title, :poster_image_url, :rating)
+    params.require(:program).permit(:title, :poster_image_url, :rating, :runtime, :genres, :release_date, :status, :tagline)
   end
 end
