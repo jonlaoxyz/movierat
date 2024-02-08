@@ -11,7 +11,8 @@ p {
 }
 
 .logo-container {
-  width: 400px;
+  width: 600px;
+  min-width: 400px;
 }
 
 .SearchBar {
@@ -43,19 +44,19 @@ p {
 }
 
 /* Style for navbar links */
-a.nav-link {
+.nav-link {
   color: #c4c4c4; 
   text-decoration: none;
 }
 
 /* Style for navbar links on hover */
-a.nav-link:hover {
+.nav-link:hover {
   color: #aa2bff; 
 }
 
 /* Style for selected navbar links */
-a.nav-link.active,
-a.nav-link.active:hover {
+.nav-link.active,
+.nav-link.active:hover {
   color: #FFA500; 
 }
 
@@ -170,9 +171,15 @@ h3.tagline {
   text-align: center;
 }
 
-.popular {
+.now-showing {
+  min-width: 800px;
+}
+
+.now-showing h1 {
+  font-weight: 200;
   color:rgb(179, 179, 179);
   font-size: 2em;
-  margin-top: 2em;
-  margin-bottom: 2em; 
+  padding-bottom: 0.25em;
+  margin: 2em 0 1em 0;
+  border-bottom: #c4c4c4 solid 1px;
 }

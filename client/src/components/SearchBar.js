@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../App.css';
 import { SearchItem } from './SearchItem';
+import { Popular } from './Popular';
+
 
 export const SearchBar = ({ addToWatchlist }) => {
   const [query, setQuery] = useState("");
@@ -35,7 +37,7 @@ export const SearchBar = ({ addToWatchlist }) => {
   return (
     <section className="SearchBar container mt-4">
       <div className="row">
-        <div className="col-md-12">
+        {/* <div className="col-md-12"> */}
           <form>
             <div className="form-group d-flex">
               <input
@@ -47,10 +49,10 @@ export const SearchBar = ({ addToWatchlist }) => {
               />
             </div>
           </form>
-        </div>
+        {/* </div> */}
       </div>
 
-      <div className="Program-List container mt-4">
+      <div className="row">
         {results.length > 0 && (
           <ul className="results col-md-12">
             {results.map((movie) => (
@@ -64,6 +66,13 @@ export const SearchBar = ({ addToWatchlist }) => {
           </ul>
         )}
       </div>
+      
+      
+      <Popular />
+      
+
+
+
     </section>
   );
 };
