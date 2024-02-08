@@ -1,5 +1,4 @@
 import React from 'react';
-
 const ProgramItem = ({
   imageSrc,
   title,
@@ -7,7 +6,8 @@ const ProgramItem = ({
   genres,
   runtime,
   tagline,
-  overview
+  overview,
+  rating // Add rating prop
 }) => {
   return (
     <li>
@@ -27,8 +27,13 @@ const ProgramItem = ({
                     <span className="release_date">{releaseDate}</span>
                   </h2>
                   <div className="facts">
-                    <span className="genres">{genres.map(genre => genre.name).join(', ')}</span>
+                    {Array.isArray(genres) && (
+                      <span className="genres">
+                        {genres.map(genre => genre.name).join(', ')}
+                      </span>
+                    )}
                     <span className="runtime">{runtime} min</span>
+                    <span className="rating">Rating: {rating}</span> {/* Display rating */}
                   </div>
                 </div>
                 <div className="program_info">

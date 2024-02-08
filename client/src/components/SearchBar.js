@@ -22,15 +22,51 @@ export const SearchBar = ({ addToWatchlist }) => {
   };
 
   // Function to add a movie to the watchlist
+  // const addToWatchlistHandler = (movieId) => {
+  //   fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=6d84c4355a7877a6b753a4cfd9ef46e4`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       // Call a function to add the movie to the watchlist with the retrieved data
+  //       addToWatchlist(data);
+  //     })
+  //     .catch((error) => console.error('Error adding to watchlist:', error));
+  // };
+
   const addToWatchlistHandler = (movieId) => {
     fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=6d84c4355a7877a6b753a4cfd9ef46e4`)
       .then((response) => response.json())
       .then((data) => {
-        // Call a function to add the movie to the watchlist with the retrieved data
-        addToWatchlist(data);
+        // Create a new program object based on the movie data
+        const programData = {
+          title: data.title,
+          poster_image_url: data.poster_path,
+          rating: data.vote_average,
+          runtime: data.runtime,
+          genres: data.genres.map(genre => genre.name).join(', '),
+          release_date: data.release_date,
+          status: data.status,
+          tagline: data.tagline
+        };
+  
+        // Send a POST request to create a new program
+        fetch('http://localhost:3000/api/programs', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            // Include any necessary authentication headers
+          },
+          body: JSON.stringify({ program: programData })
+        })
+        .then(response => response.json())
+        .then(newProgram => {
+          console.log('New program created:', newProgram);
+          // Optionally, you can update the local state or perform any other actions
+        })
+        .catch(error => console.error('Error creating program:', error));
       })
       .catch((error) => console.error('Error adding to watchlist:', error));
   };
+  
 
   return (
     <section className="SearchBar container mt-4">
