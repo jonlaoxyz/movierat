@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :api do # /api/data
  
     resources :users
-    resources :programs, only: [:index, :show, :create]
+    resources :programs, only: [:index, :show, :create, :update, :destroy]
     resources :user_programs
 
   end
