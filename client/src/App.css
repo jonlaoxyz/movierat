@@ -168,13 +168,20 @@ h3.tagline {
 .Footer {
   color:rgb(179, 179, 179);
   text-align: center;
+  border-top: #5b5b5b solid 1px;
+}
+
+.popular-list {
+  padding-left: 1em;
 }
 
 .popular {
   color:rgb(179, 179, 179);
   font-size: 2em;
   margin-top: 2em;
-  margin-bottom: 1em; 
+  font-weight: 200;
+  border-bottom: #5b5b5b solid 1px;
+  text-transform: uppercase;
 }
 
 .grid-container {
@@ -197,7 +204,9 @@ h3.tagline {
 
 .additional-info {
   color:rgb(179, 179, 179);
-  font-size: 1.5em;
-  margin-top: 10px; 
+  font-size: 1.25em;
+  font-weight: 100;
+  margin-top: 0.75em; 
   text-align: center;
+  line-height: 1.5cap;
 }

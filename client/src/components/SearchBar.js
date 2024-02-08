@@ -74,7 +74,6 @@ export const SearchBar = ({ addToWatchlist }) => {
   return (
     <section className="SearchBar container mt-4">
       <div className="row">
-        {/* <div className="col-md-12"> */}
           <form>
             <div className="form-group d-flex">
               <input
@@ -86,7 +85,6 @@ export const SearchBar = ({ addToWatchlist }) => {
               />
             </div>
           </form>
-        {/* </div> */}
       </div>
 
       <div className="row">
@@ -103,11 +101,9 @@ export const SearchBar = ({ addToWatchlist }) => {
           </ul>
         )}
       </div>
-      
-      
-      <Popular />
-      
 
+      {/* Popular Movies List */}
+      <Popular />
 
 
     </section>
