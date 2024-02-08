@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../App.css';
-import { ProgramListItem } from './ProgramListItem';
+import { SearchItem } from './SearchItem';
 
 export const SearchBar = () => {
 
@@ -63,7 +63,7 @@ export const SearchBar = () => {
       <ul className="results">
         {results.map((movie) => (
           <li key={movie.id}>
-            <ProgramListItem movie={movie} />
+            <SearchItem movie={movie} />
           </li>
         ))}
       </ul>
