@@ -9,8 +9,6 @@ export const SearchItem = ({ movie, addToWatchlist }) => {
 
   return (
     <section>
-      {/* <ul className="col-md-12">
-        <li> */}
           <div className="card">
             <section id="original_header" className="images inner">
               <div className="row">
@@ -50,8 +48,6 @@ export const SearchItem = ({ movie, addToWatchlist }) => {
               </div>
             </section>
           </div>
-        {/* </li>
-      </ul> */}
     </section>
   );
 };
