@@ -16,7 +16,11 @@ const ProgramItem = ({
           <div className="row">
             <div className="col-md-4">
               <div className="poster_wrapper">
-                <img className="img-fluid rounded" src={imageSrc} alt={title} />
+                <img 
+                  className="img-fluid rounded" 
+                  src={imageSrc ? `https://image.tmdb.org/t/p/w200${imageSrc}` : `${process.env.PUBLIC_URL}/img/000000h1.jpg`}
+                  alt={title} 
+                />
               </div>
             </div>
             <div className="col-md-8">

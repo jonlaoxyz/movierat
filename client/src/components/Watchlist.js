@@ -28,7 +28,7 @@ function Watchlist() {
           <ProgramItem
             key={program.id}
             title={program.title}
-            posterImageUrl={program.poster_image_url}
+            imageSrc={program.poster_image_url} // Changed from posterImageUrl to imageSrc
             rating={program.rating}
             runtime={program.runtime}
             genres={program.genres}
