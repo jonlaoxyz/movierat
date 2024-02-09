@@ -18,8 +18,9 @@ const ProgramItem = ({
               <div className="poster_wrapper">
                 <img 
                   className="img-fluid rounded" 
-                  src={imageSrc ? `https://image.tmdb.org/t/p/w200${imageSrc}` : `${process.env.PUBLIC_URL}/img/000000h1.jpg`}
+                  src={imageSrc ? `https://image.tmdb.org/t/p/w400${imageSrc}` : `${process.env.PUBLIC_URL}/img/no-poster-available.jpg`}
                   alt={title} 
+                  title={title}
                 />
               </div>
             </div>
@@ -47,7 +48,7 @@ const ProgramItem = ({
               <section className="control">
                 <i className="bi bi-eye"></i>
                 <i className="bi bi-heart"></i>
-                <i className="bi bi-plus-circle"></i>
+                {/* <i className="bi bi-plus-circle"></i> */}
                 <i className="bi bi-trash"></i>
               </section>
             </div>

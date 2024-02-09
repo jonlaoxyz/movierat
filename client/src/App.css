@@ -7,7 +7,11 @@ p {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  min-width: 1000px;
+  min-width: 800px;
+}
+
+.logo-container {
+  width: 400px;
 }
 
 .SearchBar {
@@ -26,9 +30,6 @@ p {
   background-color: rgb(50, 50, 50);
 }
 
-.logo-container {
-  width: 400px;
-}
 
 .Welcome {
   color: rgb(107, 107, 107);
@@ -89,9 +90,10 @@ h3.tagline {
 }
 
 .overview p {
-  font-size: 1.0em;
+  font-size: 1.25em;
   padding: 0 1em;
   font-weight: 200;
+  padding-bottom: 3em;
 }
 
 .header_info {
@@ -166,13 +168,20 @@ h3.tagline {
 .Footer {
   color:rgb(179, 179, 179);
   text-align: center;
+  border-top: #5b5b5b solid 1px;
+}
+
+.popular-list {
+  padding-left: 1em;
 }
 
 .popular {
   color:rgb(179, 179, 179);
   font-size: 2em;
   margin-top: 2em;
-  margin-bottom: 1em; 
+  font-weight: 200;
+  border-bottom: #5b5b5b solid 1px;
+  text-transform: uppercase;
 }
 
 .grid-container {
@@ -195,7 +204,9 @@ h3.tagline {
 
 .additional-info {
   color:rgb(179, 179, 179);
-  font-size: 1.5em;
-  margin-top: 10px; 
+  font-size: 1.25em;
+  font-weight: 100;
+  margin-top: 0.75em; 
   text-align: center;
+  line-height: 1.5cap;
 }

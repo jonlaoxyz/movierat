@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
 import { NavigationBar } from './components/NavigationBar';
 import { SearchBar } from './components/SearchBar';
 import Watchlist from './components/Watchlist';
 import Footer from './components/Footer';
 import { Popular } from './components/Popular';
+import './App.css';
 
 function App() {
   // Define state to store watchlist items
