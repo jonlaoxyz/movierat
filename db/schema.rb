@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_08_214957) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_09_041253) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +26,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_08_214957) do
     t.string "status"
     t.string "tagline"
     t.string "description"
+    t.boolean "fav", default: false
   end
 
   create_table "user_programs", force: :cascade do |t|
