@@ -5,13 +5,13 @@ import '../App.css';
 
 export const NavigationBar = () => {
   // Function to determine the class name based on isActive
-  const getNavLinkClass = ({ isActive }) => isActive ? 'nav-link fs-3 me-5 active' : 'nav-link fs-3 me-5';
+  const getNavLinkClass = ({ isActive }) => isActive ? 'nav-link fs-3 ms-lg-5 me-lg-0 ms-sm-3 me-sm-3 ms-xs-3 me-xs-3 active' : 'nav-link fs-3 ms-lg-5 me-lg-0 ms-sm-3 me-sm-3 ms-xs-3 me-xs-3';
 
   return (
     <header className="container-fluid">
       <div className="row align-items-center">
         {/* Logo */}
-        <div className="col-md-4">
+        <div className="col-md-4 col-sm-12">
           <div className="d-flex justify-content-start">
             <NavLink to="/">
               <img src="../img/movierat_logo.png" className="img-fluid" alt="movieRAT! logo"/>
@@ -20,9 +20,9 @@ export const NavigationBar = () => {
         </div>
 
         {/* Welcome and Navigation */}
-        <div className="col-md-8 text-end">
-          <p className="Welcome float">Welcome, Mike! | <a href="#">Logout</a></p>
-          <nav className="navbar navbar-expand-lg navbar-transparent justify-content-end">
+        <div className="col-md-8 col-sm-12 text-center text-sm-end">
+          <p className="Welcome float">Welcome, Mike! | <a href="/">Logout</a></p>
+          <nav className="navbar navbar-expand-lg navbar-transparent justify-content-center justify-content-lg-end">
             <NavLink className={({ isActive }) => getNavLinkClass({ isActive })} to="/search">Search</NavLink>
             <NavLink className={({ isActive }) => getNavLinkClass({ isActive })} to="/watchlist">Watchlist</NavLink>
             <NavLink className={({ isActive }) => getNavLinkClass({ isActive })} to="/favourites">Favourites</NavLink>
