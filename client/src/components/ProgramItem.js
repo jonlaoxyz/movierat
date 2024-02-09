@@ -7,7 +7,8 @@ const ProgramItem = ({
   runtime,
   tagline,
   overview,
-  rating // Add rating prop
+  rating,
+  onDelete
 }) => {    
   return (
     <li>
@@ -49,7 +50,7 @@ const ProgramItem = ({
                 <i className="bi bi-eye"></i>
                 <i className="bi bi-heart"></i>
                 {/* <i className="bi bi-plus-circle"></i> */}
-                <i className="bi bi-trash"></i>
+                <i className="bi bi-trash" onClick={onDelete}></i>
               </section>
             </div>
           </div>

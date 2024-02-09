@@ -21,6 +21,22 @@ function Watchlist() {
       .catch(error => console.error('Error fetching programs:', error));
   };
 
+  const deleteProgram = (id) => {
+    fetch(`http://localhost:3000/api/programs/${id}`, {
+      method: 'DELETE',
+    })
+      .then(response => {
+        if (response.ok) {
+          // Remove the deleted program from the programs state
+          setPrograms(prevPrograms => prevPrograms.filter(program => program.id !== id));
+        } else {
+          console.error('Failed to delete program');
+        }
+      })
+      .catch(error => console.error('Error deleting program:', error));
+  };
+  
+
   return (
     <section className="Watchlist container mt-4">
       <ul className="col-md-12">
@@ -36,6 +52,7 @@ function Watchlist() {
             status={program.status}
             tagline={program.tagline}
             overview={program.description}
+            onDelete={() => deleteProgram(program.id)}
           />
         ))}
       </ul>
