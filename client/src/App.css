@@ -7,7 +7,7 @@ p {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  min-width: 800px;
+  /* min-width: 800px; */
 }
 
 .logo-container {
@@ -22,7 +22,7 @@ p {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  min-width: 800px;
+  /* min-width: 800px; */
   padding: 2em;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
@@ -112,6 +112,9 @@ h3.tagline {
   margin-right: 1em;
 }
 
+.program_detail .title h2 {
+  color:#ff6f00;
+}
 
 /* icons - eye, fav, add, delete */
 
