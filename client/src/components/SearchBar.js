@@ -72,39 +72,40 @@ export const SearchBar = ({ addToWatchlist }) => {
   
 
   return (
-    <section className="SearchBar container mt-4">
-      <div className="row">
-          <form>
-            <div className="form-group d-flex">
-              <input
-                type="text"
-                className="form-control mr-5"
-                placeholder="Search..."
-                value={query}
-                onChange={onChange}
-              />
-            </div>
-          </form>
-      </div>
-
-      <div className="row">
-        {results.length > 0 && (
-          <ul className="results col-md-12">
-            {results.map((movie) => (
-              <li key={movie.id}>
-                <SearchItem
-                  movie={movie}
-                  addToWatchlist={() => addToWatchlistHandler(movie.id)} // Pass the addToWatchlist function to the SearchItem component
+    <section>
+      <div className="SearchBar container mt-4">
+        <div className="row">
+            <form>
+              <div className="form-group d-flex">
+                <input
+                  type="text"
+                  className="form-control mr-5"
+                  placeholder="Search..."
+                  value={query}
+                  onChange={onChange}
                 />
-              </li>
-            ))}
-          </ul>
-        )}
+              </div>
+            </form>
+        </div>
+
+        <div className="row">
+          {results.length > 0 && (
+            <ul className="results col-md-12">
+              {results.map((movie) => (
+                <li key={movie.id}>
+                  <SearchItem
+                    movie={movie}
+                    addToWatchlist={() => addToWatchlistHandler(movie.id)} // Pass the addToWatchlist function to the SearchItem component
+                  />
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
 
       {/* Popular Movies List */}
       <Popular />
-
 
     </section>
   );

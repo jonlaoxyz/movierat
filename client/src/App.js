@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { NavigationBar } from './components/NavigationBar';
 import { SearchBar } from './components/SearchBar';
 import Watchlist from './components/Watchlist';
+import Intro from './components/Intro';
 import Footer from './components/Footer';
-import { Popular } from './components/Popular';
+// import { Popular } from './components/Popular';
 import './App.css';
 
 function App() {
@@ -20,8 +21,9 @@ function App() {
     <div className='App'>
       <Router>
         <NavigationBar />
+        
         <Routes>
-          <Route path="/" element={<Popular />} />  
+          <Route path="/" element={<Intro />} />  
           <Route path="/search" element={<SearchBar addToWatchlist={addToWatchlist} />} />
           {/* Pass the watchlist state as a prop to the Watchlist component */}
           <Route path="/watchlist" element={<Watchlist programs={watchlist} />} />

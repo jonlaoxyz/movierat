@@ -70,6 +70,24 @@ padding-top: 1em;
 padding-bottom: 1.2em;
 }
 
+/* Intro Details */
+
+.Intro {
+  color:rgb(224, 224, 224);
+  width: 75%;
+}
+
+.Intro h2 {
+  color: #ff6f00;
+}
+
+/* .Intro p {
+  font-size: 1.65em;
+  font-weight: 300;
+  line-height: 1.80em;
+  
+} */
+
 /* Program Details */
 
 .title h2 {
