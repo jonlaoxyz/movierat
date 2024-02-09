@@ -7,38 +7,41 @@ export const Popular = () => {
   // Fetch request to the TMDB API, using the API key stored in environment variables
   const fetchMovies = () => {
     fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}`)
-    .then((res) => res.json())
-    .then((data) => {
-      console.log("Parsed Data:", data.results);
-      if (!data.errors) {
-        setResults(data.results);
-      } else {
-        setResults([]);
-      }
-    })
-    .catch((error) => console.error("Failed to fetch data:", error));
-  }
-
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Parsed Data:", data.results);
+        if (!data.errors) {
+          setResults(data.results);
+        } else {
+          setResults([]);
+        }
+      })
+      .catch((error) => console.error("Failed to fetch data:", error));
+  };
 
   useEffect(() => {
     fetchMovies();
   }, []);
 
-    // Calculate the number of items to include so the total is divisible by 3
-    const divisibleByThreeCount = results.length - (results.length % 3);
+  // Calculate the number of items to include so the total is divisible by 3
+  const divisibleByThreeCount = results.length - (results.length % 3);
 
-    // Slice the results array to include only the calculated number of items
-    const limitedResults = results.slice(0, divisibleByThreeCount);
-  
-    // Map over limitedResults to get an array of poster_path values
-    const posterPaths = limitedResults.map(movie => movie.poster_path);
+  // Slice the results array to include only the calculated number of items
+  const limitedResults = results.slice(0, divisibleByThreeCount);
 
   return (
     <div>
       <h1 className="popular">Movies that are currently in theatres</h1>
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', gap: '20px' }}>
-        {posterPaths.map((path, index) => (
-          path ? <img key={index} src={`https://image.tmdb.org/t/p/w300${path}`} alt="Movie poster" /> : null
+      <div className="grid-container">
+        {limitedResults.map((movie, index) => (
+          <div key={index} className="movie-item">
+            {movie.poster_path ? 
+              <>
+                <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt="Movie poster" />
+                <div className="additional-info">{movie.title}</div>
+              </>
+              : null}
+          </div>
         ))}
       </div>
     </div>
