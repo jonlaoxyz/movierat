@@ -50,6 +50,7 @@ const ProgramItem = ({
                 </div>
                 <div className="program_info">
                   <h3 className="tagline">{tagline}</h3>
+                  <h3 className="header_info">Overview</h3>
                   <div className="overview">
                     <p>{overview}</p>
                   </div>

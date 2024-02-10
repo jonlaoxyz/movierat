@@ -1,6 +1,5 @@
 // Favorites.js
 import React, { useState, useEffect } from 'react';
-import ProgramItem from './ProgramItem';
 import FavoriteItem from './FavoriteItem';
 
 function Favorites() {
