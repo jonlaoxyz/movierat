@@ -23,6 +23,25 @@ function Favorites() {
       .catch(error => console.error('Error fetching favorite programs:', error));
   };
   
+  const deleteFavoriteProgram = (id) => {
+    fetch(`http://localhost:3000/api/programs/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ fav: false }), // Set fav to false
+    })
+      .then(response => {
+        if (response.ok) {
+          // Remove the program from the favorites list
+          setFavoritePrograms(prevPrograms => prevPrograms.filter(program => program.id !== id));
+          console.log('Program removed from favorites');
+        } else {
+          console.error('Failed to remove program from favorites');
+        }
+      })
+      .catch(error => console.error('Error removing program from favorites:', error));
+  };
   
 
   return (
@@ -40,6 +59,7 @@ function Favorites() {
             status={program.status}
             tagline={program.tagline}
             overview={program.description}
+            onDelete={() => deleteFavoriteProgram(program.id)}
           />
         ))}
       </ul>

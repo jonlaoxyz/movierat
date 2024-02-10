@@ -8,7 +8,7 @@ const FavoriteItem = ({
   tagline,
   overview,
   rating,
-  onDelete,
+  onDelete
 }) => {    
   
 
@@ -47,6 +47,9 @@ const FavoriteItem = ({
                     <p>{overview}</p>
                   </div>
                 </div>
+              </section>
+              <section className="control">
+                <i className="bi bi-trash" onClick={onDelete}></i>
               </section>
             </div>
           </div>

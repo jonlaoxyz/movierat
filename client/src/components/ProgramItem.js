@@ -10,19 +10,15 @@ const ProgramItem = ({
   overview,
   rating,
   onDelete,
+  initialIsFavorite,
   updateFavoriteStatus // Add updateFavoriteStatus prop
 }) => {    
-  const [isFavorite, setIsFavorite] = useState(false);
-  // Function to handle favorite icon click
-  // Function to handle favorite icon click
+  const [isFavorite, setIsFavorite] = useState(initialIsFavorite);
+
   const handleFavoriteClick = () => {
-    // Toggle the favorite status locally and pass a callback function to setIsFavorite
-    setIsFavorite(prevIsFavorite => {
-      // Update the favorite status in the database based on the current state
-      updateFavoriteStatus(!prevIsFavorite); 
-      // Return the new value for isFavorite
-      return !prevIsFavorite;
-    });
+    const newFavStatus = !isFavorite;
+    setIsFavorite(newFavStatus);
+    updateFavoriteStatus(newFavStatus);
   };
   
 

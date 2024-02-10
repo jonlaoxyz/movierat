@@ -83,6 +83,7 @@ function Watchlist() {
             status={program.status}
             tagline={program.tagline}
             overview={program.description}
+            initialIsFavorite={program.fav}
             onDelete={() => deleteProgram(program.id)}
             // Pass the updateFavoriteStatus function as a prop to ProgramItem
             updateFavoriteStatus={(newFavStatus) => updateFavoriteStatus(program.id, newFavStatus)}
