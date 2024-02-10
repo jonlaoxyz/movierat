@@ -7,6 +7,7 @@ Rails.application.routes.draw do
         patch 'update_fav', to: 'programs#update_fav' # Add this line
       end
     end
+    get 'programs/favorites', to: 'programs#favorites'  # New route for fetching favorite programs
     resources :user_programs
   end
 

@@ -44,6 +44,12 @@ class Api::ProgramsController < ApplicationController
   def destroy
     @program.destroy
   end
+  
+  # GET /api/programs/favorites
+  def favorites
+    @favorite_programs = Program.where(fav: true)
+    render json: @favorite_programs
+  end
 
   private
 

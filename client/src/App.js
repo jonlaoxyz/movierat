@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { NavigationBar } from './components/NavigationBar';
 import { SearchBar } from './components/SearchBar';
 import Watchlist from './components/Watchlist';
+import Favorites from './components/Favorites';
 import Intro from './components/Intro';
 import Footer from './components/Footer';
 // import { Popular } from './components/Popular';
@@ -27,6 +28,7 @@ function App() {
           <Route path="/search" element={<SearchBar addToWatchlist={addToWatchlist} />} />
           {/* Pass the watchlist state as a prop to the Watchlist component */}
           <Route path="/watchlist" element={<Watchlist programs={watchlist} />} />
+          <Route path="/favourites" element={<Favorites />} />
         </Routes>
       </Router>
       <Footer />

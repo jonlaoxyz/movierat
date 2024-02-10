@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-const ProgramItem = ({
+const FavoriteItem = ({
   imageSrc,
   title,
   releaseDate,
@@ -55,12 +55,6 @@ const ProgramItem = ({
                   </div>
                 </div>
               </section>
-              <section className="control">
-                <i className="bi bi-eye"></i>
-                <i className={`bi bi-heart${isFavorite ? ' text-danger' : ''}`} onClick={handleFavoriteClick}></i>
-                {/* <i className="bi bi-plus-circle"></i> */}
-                <i className="bi bi-trash" onClick={onDelete}></i>
-              </section>
             </div>
           </div>
         </section>
@@ -69,4 +63,4 @@ const ProgramItem = ({
   );
 };
 
-export default ProgramItem;
+export default FavoriteItem;
