@@ -1,6 +1,15 @@
 class Api::ProgramsController < ApplicationController
   before_action :set_program, only: [:show, :update, :destroy]
 
+  # Controller action to update the favorite status of a program
+  def update_fav
+    program = Program.find(params[:id])
+    # Assuming you have a column named `fav` in your programs table
+    program.update(fav: params[:fav])
+
+    render json: program # You can customize the response as per your requirements
+  end
+
   # GET /api/programs
   def index
     @programs = Program.all

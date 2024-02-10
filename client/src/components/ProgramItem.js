@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 const ProgramItem = ({
   imageSrc,
   title,
@@ -8,8 +9,17 @@ const ProgramItem = ({
   tagline,
   overview,
   rating,
-  onDelete
+  onDelete,
+  updateFavoriteStatus // Add updateFavoriteStatus prop
 }) => {    
+  const [isFavorite, setIsFavorite] = useState(false);
+  // Function to handle favorite icon click
+  // Function to handle favorite icon click
+  const handleFavoriteClick = () => {
+    setIsFavorite(!isFavorite); // Toggle the favorite status
+    updateFavoriteStatus(!isFavorite); // Update the favorite status
+  };
+
   return (
     <li>
       <div className="card">
@@ -48,7 +58,7 @@ const ProgramItem = ({
               </section>
               <section className="control">
                 <i className="bi bi-eye"></i>
-                <i className="bi bi-heart"></i>
+                <i className={`bi bi-heart${isFavorite ? ' text-danger' : ''}`} onClick={handleFavoriteClick}></i>
                 {/* <i className="bi bi-plus-circle"></i> */}
                 <i className="bi bi-trash" onClick={onDelete}></i>
               </section>
