@@ -12,7 +12,7 @@ export const SearchItem = ({ movie, addToWatchlist }) => {
           <div className="card">
             <section id="original_header" className="images inner">
               <div className="row">
-                <div className="col-md-4">
+                <div className="col-md-12 col-lg-4 col-xs-12">
                   <div className="poster_wrapper">
                     <img
                       className="img-fluid rounded"
@@ -21,8 +21,8 @@ export const SearchItem = ({ movie, addToWatchlist }) => {
                     />
                   </div>
                 </div>
-                <div className="col-md-8">
-                  <section className="program_detail">
+                <div className="col-md-12 col-lg-8 col-xs-12 my-sm-4">
+                  <section className="program_detail ms-md-5 ms-sm-0">
                     <div className="title">
                       <h2>
                         {movie.title}
@@ -39,7 +39,6 @@ export const SearchItem = ({ movie, addToWatchlist }) => {
 
                   <section className="control">
                     <i className="bi bi-plus-circle" onClick={handleAddToWatchlist}></i>
-                    <i className="bi bi-trash"></i>
                   </section>
                 </div>
               </div>

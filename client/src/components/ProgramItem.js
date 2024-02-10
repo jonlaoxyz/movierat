@@ -15,7 +15,7 @@ const ProgramItem = ({
       <div className="card">
         <section id="original_header" className="images inner">
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-12 col-lg-4 col-xs-12">
               <div className="poster_wrapper">
                 <img 
                   className="img-fluid rounded" 
@@ -25,7 +25,7 @@ const ProgramItem = ({
                 />
               </div>
             </div>
-            <div className="col-md-8">
+            <div className="col-md-12 col-lg-8 col-xs-12 my-sm-4">
               <section className="program_detail">
                 <div className="title">
                   <h2>
