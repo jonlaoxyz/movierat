@@ -27,8 +27,16 @@ function Watchlist() {
     })
       .then(response => {
         if (response.ok) {
-          // Remove the deleted program from the programs state
-          setPrograms(prevPrograms => prevPrograms.filter(program => program.id !== id));
+          setPrograms(prevPrograms => {
+            const updatedPrograms = prevPrograms.filter(program => program.id !== id);
+            // Update Local Storage after deletion
+            localStorage.setItem('watchlist', JSON.stringify(updatedPrograms.map(program => program.id)));
+            
+            // Broadcast a custom event to notify other components of the update
+            window.dispatchEvent(new CustomEvent('watchlistUpdated'));
+            
+            return updatedPrograms;
+          });
         } else {
           console.error('Failed to delete program');
         }

@@ -234,3 +234,27 @@ h3.tagline {
   text-align: center;
   line-height: 1.5cap;
 }
+
+.movie-item:hover .add-watchlist-btn {
+  visibility: visible;
+  opacity: 1;
+}
+
+.movie-item {
+  position: relative;
+  display: inline-block;
+}
+
+.movie-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.add-watchlist-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
