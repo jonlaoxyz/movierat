@@ -14,8 +14,8 @@ class Intro extends React.Component {
                 Effortlessly add movies to your watchlist, track your viewing progress, and never miss a cinematic gem.
                 Simplify your movie-watching experience with movieRAT!</p>
             </div>
-            <div className="col-md-4 text-center text-md-center mt-3 mt-md-0">
-              <img src="./img/movierat-mascot.jpg" className="rounded-circle img-fluid" style={{ maxWidth: "350px" }} />
+            <div className="col-md-4 text-center mt-3 mt-md-0">
+              <img src="./img/movierat-mascot.jpg" className="rounded-circle img-fluid" alt="movieRAT! mascot" />
             </div>
           </div>
         </div>
