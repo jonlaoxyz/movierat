@@ -49,7 +49,6 @@ const ProgramItem = ({
               <section className="control">
                 <i className="bi bi-eye"></i>
                 <i className="bi bi-heart"></i>
-                {/* <i className="bi bi-plus-circle"></i> */}
                 <i className="bi bi-trash" onClick={onDelete}></i>
               </section>
             </div>

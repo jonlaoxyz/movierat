@@ -87,24 +87,23 @@ export const Popular = () => {
       <h1 className="popular">Popular Movies</h1>
       <div className="grid-container">
         {limitedResults.map((movie, index) => (
-          <div key={index} className="movie-item" style={{ position: 'relative' }}>
-            <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={`${movie.title} Poster`} className="rounded" />
-            <div className="additional-info">{movie.title}</div>
+          <div key={index} className="movie-item">
+            <div style={{ position: 'relative' }}>
+              <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={`${movie.title} Poster`} className="rounded" />
               {watchlist.includes(movie.id) ? (
-              <button
-                className="btn btn-secondary disabled add-watchlist-btn"
-                style={{ pointerEvents: "none" }} // Prevents the button from being clickable
-                >
-                Added to Watchlist
-              </button>
-            ) : (
-              <button
-                className="btn btn-primary add-watchlist-btn"
+                <i
+                className="bi bi-plus-circle add-watchlist-btn"
+                style={{ fontSize: "2rem", pointerEvents: "none", cursor: "not-allowed" }} // Make the icon look disabled
+                ></i>
+                ) : (
+                <i
+                className="bi bi-plus-circle add-watchlist-btn text-white"
+                style={{ fontSize: "2rem", cursor: "pointer" }} // Set cursor to pointer to indicate clickable
                 onClick={() => addToWatchlist(movie.id)}
-                >
-                Add to Watchlist
-              </button>
-            )}
+                ></i>
+                )}
+            </div>
+            <div className="additional-info">{movie.title}</div>
           </div>
         ))}
 </div>
