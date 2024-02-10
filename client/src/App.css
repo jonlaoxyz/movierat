@@ -7,7 +7,7 @@ p {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  /* min-width: 800px; */
+  min-width: 400px;
 }
 
 .logo-container {
@@ -19,10 +19,10 @@ p {
 }
 
 .card {
-  width: 90%;
   margin-left: auto;
   margin-right: auto;
-  /* min-width: 800px; */
+  min-width: 300px;
+  max-width: 80%;
   padding: 2em;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
@@ -31,7 +31,7 @@ p {
 }
 
 .img-fluid {
-  min-width: 300px;
+  min-width: 200px;
 }
 
 .Welcome {
@@ -77,10 +77,9 @@ ul {
 
 .Intro {
   color:rgb(224, 224, 224);
-  width: 80%;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1000px;
+  max-width: 80%;
 }
 
 .Intro h2 {
@@ -119,6 +118,7 @@ h3.tagline {
 
 .header_info {
   font-weight: 300;
+  color: #989898;
 }
 
 .facts span {

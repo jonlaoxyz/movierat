@@ -15,18 +15,18 @@ const ProgramItem = ({
       <div className="card">
         <section id="original_header" className="images inner">
           <div className="row">
-            <div className="col-md-12 col-lg-4 col-xs-12">
+            <div className="col-md-12 col-lg-4 col-xs-12 mb-2">
               <div className="poster_wrapper">
                 <img 
                   className="img-fluid rounded" 
-                  src={imageSrc ? `https://image.tmdb.org/t/p/w400${imageSrc}` : `${process.env.PUBLIC_URL}/img/no-poster-available.jpg`}
+                  src={imageSrc ? `https://image.tmdb.org/t/p/w300${imageSrc}` : `${process.env.PUBLIC_URL}/img/no-poster-available.jpg`}
                   alt={title} 
                   title={title}
                 />
               </div>
             </div>
-            <div className="col-md-12 col-lg-8 col-xs-12 my-sm-4">
-              <section className="program_detail">
+            <div className="col-md-12 col-lg-8 col-xs-12">
+              <section className="program_detail ms-lg-4 ms-sm-0">
                 <div className="title">
                   <h2>
                     {title}

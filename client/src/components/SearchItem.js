@@ -12,16 +12,16 @@ export const SearchItem = ({ movie, addToWatchlist }) => {
           <div className="card">
             <section id="original_header" className="images inner">
               <div className="row">
-                <div className="col-md-12 col-lg-4 col-xs-12">
+                <div className="col-md-12 col-lg-3 col-xs-12 mb-2">
                   <div className="poster_wrapper">
                     <img
                       className="img-fluid rounded"
-                      src={movie.poster_path ? `https://image.tmdb.org/t/p/w400${movie.poster_path}` : `${process.env.PUBLIC_URL}/img/no-poster-available.jpg`}
+                      src={movie.poster_path ? `https://image.tmdb.org/t/p/w200${movie.poster_path}` : `${process.env.PUBLIC_URL}/img/no-poster-available.jpg`}
                       alt={`${movie.title} Poster`}
                     />
                   </div>
                 </div>
-                <div className="col-md-12 col-lg-8 col-xs-12 my-sm-4">
+                <div className="col-md-12 col-lg-9 col-xs-12">
                   <section className="program_detail ms-md-5 ms-sm-0">
                     <div className="title">
                       <h2>
