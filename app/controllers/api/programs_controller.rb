@@ -32,13 +32,14 @@ class Api::ProgramsController < ApplicationController
   end
 
   # PATCH/PUT /api/programs/:id
-  def update
-    if @program.update(program_params)
-      render json: @program
-    else
-      render json: { errors: @program.errors.full_messages }, status: :unprocessable_entity
-    end
+def update
+  if @program.update(fav: params[:fav])
+    render json: @program
+  else
+    render json: { errors: @program.errors.full_messages }, status: :unprocessable_entity
   end
+end
+
 
   # DELETE /api/programs/:id
   def destroy
@@ -61,6 +62,6 @@ class Api::ProgramsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def program_params
-    params.require(:program).permit(:title, :poster_image_url, :rating, :runtime, :genres, :release_date, :status, :tagline, :overview)
+    params.require(:program).permit(:title, :poster_image_url, :rating, :runtime, :genres, :release_date, :status, :tagline, :overview, :fav)
   end
 end

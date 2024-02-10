@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 const FavoriteItem = ({
   imageSrc,
   title,
@@ -10,15 +9,8 @@ const FavoriteItem = ({
   overview,
   rating,
   onDelete,
-  updateFavoriteStatus // Add updateFavoriteStatus prop
 }) => {    
-  const [isFavorite, setIsFavorite] = useState(false);
-  // Function to handle favorite icon click
-  // Function to handle favorite icon click
-  const handleFavoriteClick = () => {
-    setIsFavorite(!isFavorite); // Toggle the favorite status
-    updateFavoriteStatus(!isFavorite); // Update the favorite status
-  };
+  
 
   return (
     <li>
