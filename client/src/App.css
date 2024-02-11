@@ -258,3 +258,15 @@ h3.tagline {
   right: 10px;
   z-index: 10;
 }
+
+/* animation css */
+.item-exit {
+  opacity: 1;
+}
+
+.item-exit-active {
+  opacity: 0;
+  transform: translateX(50%);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
