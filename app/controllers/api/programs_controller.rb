@@ -10,6 +10,14 @@ class Api::ProgramsController < ApplicationController
     render json: program # You can customize the response as per your requirements
   end
 
+  # Controller action to update the watched status of a program
+  def update_watched
+    program = Program.find(params[:id])
+    program.update(watched: params[:watched])
+
+    render json: program
+  end
+
   # GET /api/programs
   def index
     @programs = Program.all
@@ -62,6 +70,6 @@ end
 
   # Only allow a trusted parameter "white list" through.
   def program_params
-    params.require(:program).permit(:title, :poster_image_url, :rating, :runtime, :genres, :release_date, :status, :tagline, :overview, :fav, :movie_id)
+    params.require(:program).permit(:title, :poster_image_url, :rating, :runtime, :genres, :release_date, :status, :tagline, :overview, :fav,:watched, :movie_id)
   end
 end

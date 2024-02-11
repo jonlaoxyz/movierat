@@ -4,6 +4,7 @@ import { NavigationBar } from './components/NavigationBar';
 import { SearchBar } from './components/SearchBar';
 import Watchlist from './components/Watchlist';
 import Favorites from './components/Favorites';
+import Watched from './components/Watched';
 import Intro from './components/Intro';
 import Footer from './components/Footer';
 // import { Popular } from './components/Popular';
@@ -29,6 +30,7 @@ function App() {
           {/* Pass the watchlist state as a prop to the Watchlist component */}
           <Route path="/watchlist" element={<Watchlist programs={watchlist} />} />
           <Route path="/favourites" element={<Favorites />} />
+          <Route path="/watched" element={<Watched />} />
         </Routes>
       </Router>
       <Footer />

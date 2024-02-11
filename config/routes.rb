@@ -4,10 +4,12 @@ Rails.application.routes.draw do
     resources :programs, only: [:index, :show, :create, :update, :destroy] do
       # Define a custom route for updating the 'fav' attribute
       member do
-        patch 'update_fav', to: 'programs#update_fav' # Add this line
+        patch 'update_fav', to: 'programs#update_fav'
+        patch 'update_watched', to: 'programs#update_watched'
       end
     end
-    get 'programs/favorites', to: 'programs#favorites'  # New route for fetching favorite programs
+    get 'programs/favorites', to: 'programs#favorites'  
+    get 'programs/watched', to: 'programs#watched'
     resources :user_programs
   end
 
