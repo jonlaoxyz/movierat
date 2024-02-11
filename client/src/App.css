@@ -259,14 +259,14 @@ h3.tagline {
   z-index: 10;
 }
 
-/* animation css */
-.item-exit {
-  opacity: 1;
+/* animate on card delete */
+
+.card {
+  position: relative;
 }
 
-.item-exit-active {
+.card-exit-active {
   opacity: 0;
-  transform: translateX(50%);
+  transform: translateX(10%); /* Keep this to a minimum to prevent the "scroll bars appearing when animating" */
   transition: opacity 300ms ease-out, transform 300ms ease-out;
 }
-
