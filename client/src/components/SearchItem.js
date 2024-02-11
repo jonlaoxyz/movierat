@@ -2,20 +2,29 @@ import React, { useState, useEffect } from 'react';
 import '../App.css';
 
 export const SearchItem = ({ movie, addToWatchlist }) => {
-  const [watchlist, setWatchlist] = useState([]);
+  const [isInWatchlist, setIsInWatchlist] = useState(false);
 
-  // Function to handle adding the movie to the watchlist
-  const handleAddToWatchlist = () => {
-    addToWatchlist(movie.id);
-  };
+  // Fetch watchlist data from the database
+// Fetch watchlist data from the database
+const fetchWatchlist = () => {
+  fetch('http://localhost:3000/api/programs')
+    .then(response => response.json())
+    .then(watchlistData => {
+      console.log("Watchlist data:", watchlistData); // Log the watchlist data
+      setIsInWatchlist(watchlistData.some(program => program.id === movie.id));
+    })
+    .catch(error => console.error('Error fetching watchlist:', error));
+};
+
 
   useEffect(() => {
-    // Retrieve watchlist from local storage
-    const storedWatchlist = localStorage.getItem('watchlist');
-    if (storedWatchlist) {
-      setWatchlist(JSON.parse(storedWatchlist));
-    }
-  }, []);
+    fetchWatchlist();
+  }, []); // eslint-disable-next-line react-hooks/exhaustive-deps
+
+  const handleAddToWatchlist = () => {
+    addToWatchlist(movie.id);
+    setIsInWatchlist(true);
+  };
 
   return (
     <section>
@@ -48,15 +57,15 @@ export const SearchItem = ({ movie, addToWatchlist }) => {
               </section>
 
               <section className="control">
-                {watchlist.includes(movie.id) ? (
+                {isInWatchlist ? (
                   <i
                     className="bi bi-plus-circle disabled-icon"
-                    style={{ cursor: "not-allowed", pointerEvents: "none", color: "black" }} // Make the icon look disabled
+                    style={{ cursor: "not-allowed", pointerEvents: "none", color: "black" }}
                   ></i>
                 ) : (
                   <i
                     className="bi bi-plus-circle"
-                    style={{ cursor: "pointer" }} // Set cursor to pointer to indicate clickable
+                    style={{ cursor: "pointer" }}
                     onClick={handleAddToWatchlist}
                   ></i>
                 )}

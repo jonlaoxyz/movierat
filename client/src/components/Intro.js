@@ -3,6 +3,7 @@ import { Popular } from './Popular';
 
 class Intro extends React.Component {
   render() {
+    const { addToWatchlist, watchlist } = this.props;
     return (
       <section>
         <div className="Intro my-5 pt-3 container">
@@ -21,7 +22,7 @@ class Intro extends React.Component {
         </div>
 
       {/* Popular Movies List */}
-      <Popular />
+      <Popular addToWatchlistProp={addToWatchlist} watchlist={watchlist} />{/* Corrected prop name */}
       </section>
     );
   }

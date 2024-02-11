@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import '../App.css';
 import { SearchItem } from './SearchItem';
 import { Popular } from './Popular';
-
+import '../App.css';
 
 export const SearchBar = ({ addToWatchlist }) => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+  const [watchlist, setWatchlist] = useState([]);
+
+  // Function to update watchlist state
+  const updateWatchlist = (movieId) => {
+    // Update watchlist state here (e.g., add the movieId to the watchlist)
+    setWatchlist(prevWatchlist => [...prevWatchlist, movieId]);
+  };
 
   const onChange = (e) => {
     setQuery(e.target.value);
@@ -23,79 +29,37 @@ export const SearchBar = ({ addToWatchlist }) => {
       .catch((error) => console.error("Failed to fetch data:", error));
   };
 
-  // Function to add a movie to the watchlist
-  // const addToWatchlistHandler = (movieId) => {
-  //   fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=6d84c4355a7877a6b753a4cfd9ef46e4`)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       // Call a function to add the movie to the watchlist with the retrieved data
-  //       addToWatchlist(data);
-  //     })
-  //     .catch((error) => console.error('Error adding to watchlist:', error));
-  // };
-
-  const addToWatchlistHandler = (movieId) => {
-    fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=6d84c4355a7877a6b753a4cfd9ef46e4`)
-      .then((response) => response.json())
-      .then((data) => {
-        // Create a new program object based on the movie data
-        const programData = {
-          title: data.title,
-          poster_image_url: data.poster_path,
-          rating: data.vote_average,
-          runtime: data.runtime,
-          genres: data.genres.map(genre => genre.name).join(', '),
-          release_date: data.release_date,
-          status: data.status,
-          tagline: data.tagline,
-          overview: data.overview
-        };
-  
-        // Send a POST request to create a new program
-        fetch('http://localhost:3000/api/programs', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            // Include any necessary authentication headers
-          },
-          body: JSON.stringify({ program: programData })
-        })
-        .then(response => response.json())
-        .then(newProgram => {
-          console.log('New program created:', newProgram);
-          // Optionally, you can update the local state or perform any other actions
-        })
-        .catch(error => console.error('Error creating program:', error));
-      })
-      .catch((error) => console.error('Error adding to watchlist:', error));
+  const handleAddToWatchlist = (movieId) => {
+    addToWatchlist(movieId); // Call the addToWatchlist function passed from props
+    updateWatchlist(movieId); // Update watchlist state
   };
-  
 
   return (
     <section>
       <div className="SearchBar container mt-4">
         <div className="row">
-            <form>
-              <div className="form-group d-flex">
-                <input
-                  type="text"
-                  className="form-control mr-5"
-                  placeholder="Search..."
-                  value={query}
-                  onChange={onChange}
-                />
-              </div>
-            </form>
+          <form>
+            <div className="form-group d-flex">
+              <input
+                type="text"
+                className="form-control mr-5"
+                placeholder="Search..."
+                value={query}
+                onChange={onChange}
+              />
+            </div>
+          </form>
         </div>
 
         <div className="container col-md-12 mt-4">
           {results.length > 0 && (
-            <ul className="results ">
+            <ul className="results">
               {results.map((movie) => (
                 <li key={movie.id}>
                   <SearchItem
                     movie={movie}
-                    addToWatchlist={() => addToWatchlistHandler(movie.id)} // Pass the addToWatchlist function to the SearchItem component
+                    addToWatchlist={handleAddToWatchlist} // Pass the handleAddToWatchlist function
+                    watchlist={watchlist} // Pass the updated watchlist prop
                   />
                 </li>
               ))}
@@ -105,8 +69,7 @@ export const SearchBar = ({ addToWatchlist }) => {
       </div>
 
       {/* Popular Movies List */}
-      <Popular />
-
+      <Popular addToWatchlistProp={addToWatchlist} initialWatchlist={watchlist} />
     </section>
   );
 };

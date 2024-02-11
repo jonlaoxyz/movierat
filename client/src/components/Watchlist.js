@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ProgramItem from './ProgramItem';
 
-function Watchlist() {
+function Watchlist({ watchlist }) {
   const [programs, setPrograms] = useState([]);
 
   useEffect(() => {
@@ -61,6 +61,7 @@ function Watchlist() {
             tagline={program.tagline}
             overview={program.description}
             onDelete={() => deleteProgram(program.id)}
+            isInWatchlist={watchlist.includes(program.id)} // Pass isInWatchlist prop
           />
         ))}
       </ul>
