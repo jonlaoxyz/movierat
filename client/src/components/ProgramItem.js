@@ -1,5 +1,5 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+
 const ProgramItem = ({
   imageSrc,
   title,
@@ -78,7 +78,7 @@ const ProgramItem = ({
                   </div>
                 </section>
                 <section className="control">
-                  <i className={`bi bi-eye${isWatched ? ' text-success' : ''}`} onClick={handleWatchedClick}></i>
+                  <i className={`bi bi-eye${isWatched ? '-fill text-warning' : ''}`} onClick={handleWatchedClick}></i>
                   <i className={`bi bi-heart${isFavorite ? '-fill text-danger' : ''}`} onClick={handleFavoriteClick}></i>
                   <i className="bi bi-trash" onClick={handleDelete}></i>
                 </section>
