@@ -270,3 +270,20 @@ h3.tagline {
   transform: translateX(10%); /* Keep this to a minimum to prevent the "scroll bars appearing when animating" */
   transition: opacity 300ms ease-out, transform 300ms ease-out;
 }
+
+/* back-to-top icon */
+
+.back-to-top {
+  font-size: 1.5em;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0.5;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+.back-to-top:hover {
+  opacity: 1;
+}
+
