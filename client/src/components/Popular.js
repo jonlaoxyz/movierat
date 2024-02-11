@@ -7,8 +7,6 @@ export const Popular = () => {
   const [watchlist, setWatchlist] = useState([]);
   const location = useLocation();
 
-  console.log("PL11: watchlist: ", watchlist)
-
   const fetchMovies = () => {
     fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_KEY}`)
       .then((res) => res.json())
@@ -72,7 +70,6 @@ export const Popular = () => {
         })
         .then(response => response.json())
         .then(newProgram => {
-          console.log('PL74: newProgram:', newProgram);
           setWatchlist(prev => {
             const updatedWatchlist = [...prev, movieId];
             // Save the updated watchlist to Local Storage

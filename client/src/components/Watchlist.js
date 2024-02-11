@@ -4,8 +4,6 @@ import ProgramItem from './ProgramItem';
 function Watchlist() {
   const [programs, setPrograms] = useState([]);
 
-  console.log("WL7: programs: ", programs)
-
 
   useEffect(() => {
     fetchPrograms();
@@ -63,7 +61,7 @@ function Watchlist() {
       .then(response => {
         if (response.ok) {
           // Handle success
-          console.log('Favorite status updated successfully');
+          // console.log('Favorite status updated successfully');
           // Update the local state or rerender the component if needed
         } else {
           // Handle failure
@@ -87,7 +85,7 @@ const updateWatchedStatus = (programId, newWatchedStatus) => {
     .then(response => {
       if (response.ok) {
         // Handle success
-        console.log('Watched status updated successfully');
+        // console.log('Watched status updated successfully');
         // Update the local state or rerender the component if needed
       } else {
         // Handle failure
