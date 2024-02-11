@@ -14,20 +14,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_11_200715) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "fav_movies", force: :cascade do |t|
-    t.string "title"
-    t.string "poster_image_url"
-    t.float "rating"
-    t.integer "runtime"
-    t.string "genres"
-    t.date "release_date"
-    t.string "status"
-    t.string "tagline"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "programs", force: :cascade do |t|
     t.string "title"
     t.string "poster_image_url"
