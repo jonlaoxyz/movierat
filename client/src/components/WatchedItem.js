@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const WatchedItem = ({
   imageSrc,
@@ -10,12 +10,23 @@ const WatchedItem = ({
   description,
   rating,
   onDelete
-}) => {    
+}) => {   
+
+  // code below is used for animating on delete   
+  const [isExiting, setIsExiting] = useState(false);
+
+  const handleDelete = () => {
+    setIsExiting(true);
+    // Trigger the onDelete function after the animation completes - so we can remove the item from our Fav list
+    setTimeout(() => {
+      onDelete();
+    }, 300); // Wait for the same duration as the animation (300ms)
+  };
   
 
   return (
     <li>
-      <div className="card">
+      <div className={`card ${isExiting ? 'card-exit-active' : ''}`}>
         <section id="original_header" className="images inner">
           <div className="row">
             <div className="col-md-12 col-lg-4 col-xs-12">
@@ -50,7 +61,7 @@ const WatchedItem = ({
                 </div>
               </section>
               <section className="control">
-                <i className="bi bi-trash" onClick={onDelete}></i>
+                <i className="bi bi-trash" onClick={handleDelete}></i>
               </section>
             </div>
           </div>
