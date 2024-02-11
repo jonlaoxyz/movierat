@@ -75,6 +75,30 @@ function Watchlist() {
       });
   };
 
+  // Function to update the watched status of a program
+const updateWatchedStatus = (programId, newWatchedStatus) => {
+  fetch(`http://localhost:3000/api/programs/${programId}/update_watched`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ watched: newWatchedStatus }),
+  })
+    .then(response => {
+      if (response.ok) {
+        // Handle success
+        console.log('Watched status updated successfully');
+        // Update the local state or rerender the component if needed
+      } else {
+        // Handle failure
+        console.error('Failed to update watched status');
+      }
+    })
+    .catch(error => {
+      console.error('Error updating watched status:', error);
+    });
+};
+ 
   return (
     <section className="Watchlist container mt-4">
       <ul className="col-md-12">
@@ -91,9 +115,11 @@ function Watchlist() {
             tagline={program.tagline}
             description={program.description}
             initialIsFavorite={program.fav}
+            initialIsWatched={program.watched}
             onDelete={() => deleteProgram(program.id)}
             // Pass the updateFavoriteStatus function as a prop to ProgramItem
             updateFavoriteStatus={(newFavStatus) => updateFavoriteStatus(program.id, newFavStatus)}
+            updateWatchedStatus={(newWatchedStatus) => updateWatchedStatus(program.id, newWatchedStatus)}
           />
         ))}
       </ul>

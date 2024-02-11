@@ -11,16 +11,25 @@ const ProgramItem = ({
   rating,
   onDelete,
   initialIsFavorite,
-  updateFavoriteStatus // Add updateFavoriteStatus prop
-}) => {    
+  updateFavoriteStatus,
+  initialIsWatched,
+  updateWatchedStatus
+}) => {
   const [isFavorite, setIsFavorite] = useState(initialIsFavorite);
+  const [isWatched, setIsWatched] = useState(initialIsWatched);
 
   const handleFavoriteClick = () => {
     const newFavStatus = !isFavorite;
     setIsFavorite(newFavStatus);
     updateFavoriteStatus(newFavStatus);
   };
-  
+
+  const handleWatchedClick = () => {
+    const newWatchedStatus = !isWatched;
+    setIsWatched(newWatchedStatus);
+    updateWatchedStatus(newWatchedStatus);
+  }
+
 
   return (
     <li>
@@ -29,10 +38,10 @@ const ProgramItem = ({
           <div className="row">
             <div className="col-md-12 col-lg-4 col-xs-12 mb-2">
               <div className="poster_wrapper">
-                <img 
-                  className="img-fluid rounded" 
+                <img
+                  className="img-fluid rounded"
                   src={imageSrc ? `https://image.tmdb.org/t/p/w300${imageSrc}` : `${process.env.PUBLIC_URL}/img/no-poster-available.jpg`}
-                  alt={title} 
+                  alt={title}
                   title={title}
                 />
               </div>
@@ -45,7 +54,7 @@ const ProgramItem = ({
                   </h2>
                   <h3 className="release_date">Release Date: {releaseDate}</h3>
                   <div className="facts">
-                  <span className="genres">{genres}</span>
+                    <span className="genres">{genres}</span>
                     <span className="runtime">{runtime} min</span>
                     <span className="rating">Rating: {rating}</span> {/* Display rating */}
                   </div>
