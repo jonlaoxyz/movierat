@@ -68,7 +68,7 @@ const ProgramItem = ({
                 </div>
               </section>
               <section className="control">
-                <i className="bi bi-eye"></i>
+                <i className={`bi bi-eye${isWatched ? ' text-success' : ''}`} onClick={handleWatchedClick}></i>
                 <i className={`bi bi-heart${isFavorite ? '-fill text-danger' : ''}`} onClick={handleFavoriteClick}></i>
                 {/* <i className="bi bi-plus-circle"></i> */}
                 <i className="bi bi-trash" onClick={onDelete}></i>
