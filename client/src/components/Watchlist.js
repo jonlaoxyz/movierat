@@ -115,6 +115,7 @@ const updateWatchedStatus = (programId, newWatchedStatus) => {
             tagline={program.tagline}
             description={program.description}
             initialIsFavorite={program.fav}
+            initialIsWatched={program.watched}
             onDelete={() => deleteProgram(program.id)}
             // Pass the updateFavoriteStatus function as a prop to ProgramItem
             updateFavoriteStatus={(newFavStatus) => updateFavoriteStatus(program.id, newFavStatus)}

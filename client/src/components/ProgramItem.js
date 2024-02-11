@@ -12,10 +12,11 @@ const ProgramItem = ({
   onDelete,
   initialIsFavorite,
   updateFavoriteStatus,
+  initialIsWatched,
   updateWatchedStatus
 }) => {
   const [isFavorite, setIsFavorite] = useState(initialIsFavorite);
-  const [isWatched, setIsWatched] = useState(false);
+  const [isWatched, setIsWatched] = useState(initialIsWatched);
 
   const handleFavoriteClick = () => {
     const newFavStatus = !isFavorite;
