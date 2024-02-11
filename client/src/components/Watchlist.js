@@ -4,6 +4,9 @@ import ProgramItem from './ProgramItem';
 function Watchlist() {
   const [programs, setPrograms] = useState([]);
 
+  console.log("WL7: programs: ", programs)
+
+
   useEffect(() => {
     fetchPrograms();
   }, []);
@@ -29,8 +32,12 @@ function Watchlist() {
         if (response.ok) {
           setPrograms(prevPrograms => {
             const updatedPrograms = prevPrograms.filter(program => program.id !== id);
-            // Update Local Storage after deletion
-            localStorage.setItem('watchlist', JSON.stringify(updatedPrograms.map(program => program.id)));
+            
+            // Assuming each program object includes a `movie_id` property:
+            const updatedWatchlistIds = updatedPrograms.map(program => program.movie_id); // Use TMDB movie_id
+            
+            // Update Local Storage with TMDB movie_ids
+            localStorage.setItem('watchlist', JSON.stringify(updatedWatchlistIds));
             
             // Broadcast a custom event to notify other components of the update
             window.dispatchEvent(new CustomEvent('watchlistUpdated'));
@@ -43,6 +50,7 @@ function Watchlist() {
       })
       .catch(error => console.error('Error deleting program:', error));
   };
+  
   
 
   return (

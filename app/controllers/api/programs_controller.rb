@@ -46,6 +46,6 @@ class Api::ProgramsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def program_params
-    params.require(:program).permit(:title, :poster_image_url, :rating, :runtime, :genres, :release_date, :status, :tagline, :overview)
+    params.require(:program).permit(:title, :poster_image_url, :rating, :runtime, :genres, :release_date, :status, :tagline, :overview, :movie_id)
   end
 end

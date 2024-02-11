@@ -40,6 +40,7 @@ export const SearchBar = ({ addToWatchlist }) => {
       .then((data) => {
         // Create a new program object based on the movie data
         const programData = {
+          movie_id: data.id,
           title: data.title,
           poster_image_url: data.poster_path,
           rating: data.vote_average,
