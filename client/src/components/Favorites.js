@@ -58,7 +58,7 @@ function Favorites() {
             releaseDate={program.release_date}
             status={program.status}
             tagline={program.tagline}
-            overview={program.description}
+            description={program.description}
             onDelete={() => deleteFavoriteProgram(program.id)}
           />
         ))}

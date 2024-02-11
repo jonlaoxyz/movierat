@@ -6,7 +6,7 @@ const FavoriteItem = ({
   genres,
   runtime,
   tagline,
-  overview,
+  description,
   rating,
   onDelete
 }) => {    
@@ -44,7 +44,7 @@ const FavoriteItem = ({
                   <h3 className="tagline">{tagline}</h3>
                   <h3 className="header_info">Overview</h3>
                   <div className="overview">
-                    <p>{overview}</p>
+                    <p>{description}</p>
                   </div>
                 </div>
               </section>

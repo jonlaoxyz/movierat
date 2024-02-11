@@ -7,7 +7,7 @@ const ProgramItem = ({
   genres,
   runtime,
   tagline,
-  overview,
+  description,
   rating,
   onDelete,
   initialIsFavorite,
@@ -54,7 +54,7 @@ const ProgramItem = ({
                   <h3 className="tagline">{tagline}</h3>
                   <h3 className="header_info">Overview</h3>
                   <div className="overview">
-                    <p>{overview}</p>
+                    <p>{description}</p>
                   </div>
                 </div>
               </section>
