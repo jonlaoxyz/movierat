@@ -1,6 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
-const ProgramItem = ({
+const FavoriteItem = ({
   imageSrc,
   title,
   releaseDate,
@@ -9,17 +8,8 @@ const ProgramItem = ({
   tagline,
   description,
   rating,
-  onDelete,
-  initialIsFavorite,
-  updateFavoriteStatus // Add updateFavoriteStatus prop
+  onDelete
 }) => {    
-  const [isFavorite, setIsFavorite] = useState(initialIsFavorite);
-
-  const handleFavoriteClick = () => {
-    const newFavStatus = !isFavorite;
-    setIsFavorite(newFavStatus);
-    updateFavoriteStatus(newFavStatus);
-  };
   
 
   return (
@@ -27,18 +17,18 @@ const ProgramItem = ({
       <div className="card">
         <section id="original_header" className="images inner">
           <div className="row">
-            <div className="col-md-12 col-lg-4 col-xs-12 mb-2">
+            <div className="col-md-12 col-lg-4 col-xs-12">
               <div className="poster_wrapper">
                 <img 
                   className="img-fluid rounded" 
-                  src={imageSrc ? `https://image.tmdb.org/t/p/w300${imageSrc}` : `${process.env.PUBLIC_URL}/img/no-poster-available.jpg`}
+                  src={imageSrc ? `https://image.tmdb.org/t/p/w400${imageSrc}` : `${process.env.PUBLIC_URL}/img/no-poster-available.jpg`}
                   alt={title} 
                   title={title}
                 />
               </div>
             </div>
-            <div className="col-md-12 col-lg-8 col-xs-12">
-              <section className="program_detail ms-lg-4 ms-sm-0">
+            <div className="col-md-12 col-lg-8 col-xs-12 my-sm-4">
+              <section className="program_detail">
                 <div className="title">
                   <h2>
                     {title}
@@ -59,9 +49,6 @@ const ProgramItem = ({
                 </div>
               </section>
               <section className="control">
-                <i className="bi bi-eye"></i>
-                <i className={`bi bi-heart${isFavorite ? ' text-danger' : ''}`} onClick={handleFavoriteClick}></i>
-                {/* <i className="bi bi-plus-circle"></i> */}
                 <i className="bi bi-trash" onClick={onDelete}></i>
               </section>
             </div>
@@ -72,4 +59,4 @@ const ProgramItem = ({
   );
 };
 
-export default ProgramItem;
+export default FavoriteItem;
