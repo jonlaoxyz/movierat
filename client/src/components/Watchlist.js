@@ -14,7 +14,9 @@ function Watchlist() {
       .then(response => response.json())
       .then(programsData => {
         if (Array.isArray(programsData)) {
-          setPrograms(programsData);
+          // Reverse the array to make new items appear at the top
+          const reversedData = programsData.reverse();
+          setPrograms(reversedData);
         } else {
           console.error('Invalid data format received:', programsData);
         }
