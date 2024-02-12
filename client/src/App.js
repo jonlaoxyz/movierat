@@ -7,6 +7,7 @@ import Favorites from './components/Favorites';
 import Watched from './components/Watched';
 import Intro from './components/Intro';
 import Footer from './components/Footer';
+import LogIn from './components/LogIn';
 import './App.css';
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
           <Route path="/watchlist" element={<Watchlist programs={watchlist} />} />
           <Route path="/favourites" element={<Favorites />} />
           <Route path="/watched" element={<Watched />} />
+          <Route path="/login" element={<LogIn />} />
         </Routes>
       </Router>
       <Footer />
