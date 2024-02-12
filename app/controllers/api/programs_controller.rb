@@ -41,12 +41,13 @@ class Api::ProgramsController < ApplicationController
 
   # PATCH/PUT /api/programs/:id
 def update
-  if @program.update(fav: params[:fav])
+  if @program.update(program_params)
     render json: @program
   else
     render json: { errors: @program.errors.full_messages }, status: :unprocessable_entity
   end
 end
+
 
 
   # DELETE /api/programs/:id
