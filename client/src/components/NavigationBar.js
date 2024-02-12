@@ -10,7 +10,7 @@ export const NavigationBar = () => {
   const getNavLinkClass = ({ isActive }) => isActive ? 'nav-link fs-3 ms-lg-5 me-lg-0 ms-sm-3 me-sm-3 ms-xs-3 mx-xs-3 active' : 'nav-link fs-3 ms-lg-5 me-lg-0 ms-sm-3 me-sm-3 ms-xs-3 mx-xs-3';
 
   // Define the path of the login page
-  const loginPagePath = '/LogIn'; // Update with your actual path
+  const loginPagePath = '/login'; // Update with your actual path
 
   return (
     <header className="container-fluid">
@@ -28,7 +28,7 @@ export const NavigationBar = () => {
         <div className="col-lg-7 col-md-12 text-center text-lg-end">
           {/* Conditionally render the welcome message based on the current route */}
           {location.pathname !== loginPagePath && (
-            <p className="Welcome float">Welcome, Mike! | <a href="/LogIn">Logout</a></p>
+            <p className="Welcome float">Welcome, Mike! | <a href="/login">Logout</a></p>
           )}
           <nav className="navbar navbar-expand-lg navbar-transparent justify-content-center justify-content-lg-end">
             <NavLink className={({ isActive }) => getNavLinkClass({ isActive })} to="/search">Search</NavLink>
