@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import WatchedItem from './WatchedItem'; // Assuming you have a WatchedItem component
+import WatchedItem from './WatchedItem';
 
 function Watched() {
   const [watchedPrograms, setWatchedPrograms] = useState([]);
@@ -34,7 +34,6 @@ function Watched() {
         if (response.ok) {
           // Remove the program from the watched list
           setWatchedPrograms(prevPrograms => prevPrograms.filter(program => program.id !== id));
-          console.log('Program removed from watched');
         } else {
           console.error('Failed to remove program from watched');
         }

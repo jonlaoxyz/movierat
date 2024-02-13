@@ -33,7 +33,6 @@ function Watchlist() {
           setPrograms(prevPrograms => {
             const updatedPrograms = prevPrograms.filter(program => program.id !== id);
             
-            // Assuming each program object includes a `movie_id` property:
             const updatedWatchlistIds = updatedPrograms.map(program => program.movie_id); // Use TMDB movie_id
             
             // Update Local Storage with TMDB movie_ids
@@ -62,8 +61,6 @@ function Watchlist() {
     })
       .then(response => {
         if (response.ok) {
-          // Handle success
-          // console.log('Favorite status updated successfully');
           // Update the local state or rerender the component if needed
         } else {
           // Handle failure
@@ -86,8 +83,6 @@ const updateWatchedStatus = (programId, newWatchedStatus) => {
   })
     .then(response => {
       if (response.ok) {
-        // Handle success
-        // console.log('Watched status updated successfully');
         // Update the local state or rerender the component if needed
       } else {
         // Handle failure
@@ -106,7 +101,7 @@ const updateWatchedStatus = (programId, newWatchedStatus) => {
           <ProgramItem
             key={program.id}
             title={program.title}
-            imageSrc={program.poster_image_url} // Changed from posterImageUrl to imageSrc
+            imageSrc={program.poster_image_url}
             rating={program.rating}
             runtime={program.runtime}
             genres={program.genres}
@@ -117,7 +112,6 @@ const updateWatchedStatus = (programId, newWatchedStatus) => {
             initialIsFavorite={program.fav}
             initialIsWatched={program.watched}
             onDelete={() => deleteProgram(program.id)}
-            // Pass the updateFavoriteStatus function as a prop to ProgramItem
             updateFavoriteStatus={(newFavStatus) => updateFavoriteStatus(program.id, newFavStatus)}
             updateWatchedStatus={(newWatchedStatus) => updateWatchedStatus(program.id, newWatchedStatus)}
           />

@@ -69,7 +69,7 @@ export const Popular = () => {
           body: JSON.stringify({ program: programData })
         })
         .then(response => response.json())
-        .then(newProgram => {
+        .then(() => {
           setWatchlist(prev => {
             const updatedWatchlist = [...prev, movieId];
             // Save the updated watchlist to Local Storage

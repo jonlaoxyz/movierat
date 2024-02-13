@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Popular } from './Popular';
 
 class LogIn extends React.Component {
   render() {

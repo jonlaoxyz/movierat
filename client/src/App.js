@@ -50,7 +50,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Intro />} />  
           <Route path="/search" element={<SearchBar addToWatchlist={addToWatchlist} />} />
-          {/* Pass the watchlist state as a prop to the Watchlist component */}
           <Route path="/watchlist" element={<Watchlist programs={watchlist} />} />
           <Route path="/favourites" element={<Favorites />} />
           <Route path="/watched" element={<Watched />} />

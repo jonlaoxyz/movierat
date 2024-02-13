@@ -48,7 +48,7 @@ const FavoriteItem = ({
                   <div className="facts">
                     <span className="genres">{genres}</span>
                     <span className="runtime">{runtime} min</span>
-                    <span className="rating">Rating: {rating}</span> {/* Display rating */}
+                    <span className="rating">Rating: {rating}</span>
                   </div>
                 </div>
                 <div className="program_info">

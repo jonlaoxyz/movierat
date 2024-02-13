@@ -1,4 +1,3 @@
-// Favorites.js
 import React, { useState, useEffect } from 'react';
 import FavoriteItem from './FavoriteItem';
 
@@ -35,7 +34,6 @@ function Favorites() {
         if (response.ok) {
           // Remove the program from the favorites list
           setFavoritePrograms(prevPrograms => prevPrograms.filter(program => program.id !== id));
-          console.log('Program removed from favorites');
         } else {
           console.error('Failed to remove program from favorites');
         }

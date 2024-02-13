@@ -10,7 +10,7 @@ export const NavigationBar = () => {
   const getNavLinkClass = ({ isActive }) => isActive ? 'nav-link fs-3 ms-lg-5 me-lg-0 ms-sm-3 me-sm-3 ms-xs-3 mx-xs-3 active' : 'nav-link fs-3 ms-lg-5 me-lg-0 ms-sm-3 me-sm-3 ms-xs-3 mx-xs-3';
 
   // Define the path of the login page
-  const loginPagePath = '/login'; // Update with your actual path
+  const loginPagePath = '/login';
 
   return (
     <header className="container-fluid">

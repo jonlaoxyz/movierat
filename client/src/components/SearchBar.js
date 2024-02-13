@@ -4,7 +4,7 @@ import { SearchItem } from './SearchItem';
 import { Popular } from './Popular';
 
 
-export const SearchBar = ({ addToWatchlist }) => {
+export const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
@@ -13,7 +13,6 @@ export const SearchBar = ({ addToWatchlist }) => {
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("Parsed Data:", data.results);
         if (!data.errors) {
           setResults(data.results);
         } else {
@@ -22,17 +21,6 @@ export const SearchBar = ({ addToWatchlist }) => {
       })
       .catch((error) => console.error("Failed to fetch data:", error));
   };
-
-  // Function to add a movie to the watchlist
-  // const addToWatchlistHandler = (movieId) => {
-  //   fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=6d84c4355a7877a6b753a4cfd9ef46e4`)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       // Call a function to add the movie to the watchlist with the retrieved data
-  //       addToWatchlist(data);
-  //     })
-  //     .catch((error) => console.error('Error adding to watchlist:', error));
-  // };
 
   const addToWatchlistHandler = (movieId) => {
     fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=6d84c4355a7877a6b753a4cfd9ef46e4`)
@@ -57,15 +45,10 @@ export const SearchBar = ({ addToWatchlist }) => {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            // Include any necessary authentication headers
           },
           body: JSON.stringify({ program: programData })
         })
         .then(response => response.json())
-        .then(newProgram => {
-          console.log('New program created:', newProgram);
-          // Optionally, you can update the local state or perform any other actions
-        })
         .catch(error => console.error('Error creating program:', error));
       })
       .catch((error) => console.error('Error adding to watchlist:', error));
