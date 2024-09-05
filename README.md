@@ -13,12 +13,23 @@ This project uses Rails for the backend, with PostgreSQL as the database, and Re
 - **User Authentication**: Secure login system, allowing users to have personalized movie lists.
 
 ## Screenshots Of MovieRat
-![Landing Page](https://github.com/jonlaoxyz/movierat/blob/master/client/images/Landing%20page%20logged%20in.png?raw=true)
-![Search](client/images/Search.png)
-![Watchlist](client/images/watchlist.png)
-![Favourites](client/images/favourites.png)
-![Watched](client/images/watched.png)
+<img src="https://github.com/jonlaoxyz/movierat/blob/master/client/images/Landing%20page%20logged%20in.png?raw=true" alt="Landing Page" width="75%" />
 
+<hr />
+
+<img src="client/images/Search.png" alt="Search" width="75%" />
+
+<hr />
+
+<img src="client/images/watchlist.png" alt="Watchlist" width="75%" />
+
+<hr />
+
+<img src="client/images/favourites.png" alt="Favourites" width="75%" />
+
+<hr />
+
+<img src="client/images/watched.png" alt="Watched" width="75%" />
 
 
 
@@ -126,9 +137,9 @@ sudo service postgresql start
 - The \`.env\` file in the \`client\` folder holds environment variables necessary for the frontend React app to run properly.
 
 
-## Deployment to Heroku
+## If you want to use this project and make changes/ features of your own and then deploy to Heroku, follow the following steps
 
-This boilerplate is _almost_ all set up to deal with deploying to Heroku. If you have the Heroku CLI tools installed you can run `heroku create` to create the Heroku project.
+MovieRat is all set up to deal with deploying to Heroku. If you have the Heroku CLI tools installed you can run `heroku create` to create the Heroku project.
 
 Then we must run two commands to tell Heroku to first build our React app, and _then_ build the Rails app.
 
