@@ -104,9 +104,7 @@ You should now see the MovieRat landing page with trending movies listed.
 
 Ensure PostgreSQL is running before attempting to create or access the database. If PostgreSQL is not running, start it with:
 
-\`\`\`bash
-sudo service postgresql start
-\`\`\`
+**sudo service postgresql start**
 
 ## Additional Information
 
