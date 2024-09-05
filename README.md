@@ -1,63 +1,135 @@
-# Last update
 
-This project was last updated on _09-11-2023_.
+# MovieRat
 
-# React + Rails No-Fluff Boilerplate
+MovieRat is a web application where users can discover, manage, and track movies. Users can explore trending and in-theater movies, add them to their watchlist, favorites, or mark them as watched. The app also allows users to search for movies and curate their collections.
 
-A boilerplate project for anyone interested in making a project that uses React and Rails.
+This project uses Rails for the backend, with PostgreSQL as the database, and React for the frontend.
 
-Note! This boilerplate has _no fluff_! That means that there's nothing set up for you to do authentication stuff, there's no Redux stuff, and there's no React Router stuff.
+## Features
 
-The main important bit is that the React project has `proxy` set to `localhost:3001` in the `package.json` file. Take a look!
+- **Trending and In-Theater Movies**: Users can view lists of trending and currently in-theater movies.
+- **Movie Management**: Add movies to your watchlist, favorites, or watched section.
+- **Search Functionality**: Search for movies and add them to your watchlist.
+- **User Authentication**: Secure login system, allowing users to have personalized movie lists.
 
-## Hall of Fame
+## Technologies Used
 
-Here are some projects that have been built using this boilerplate.
+- **Backend**: Ruby on Rails, PostgreSQL
+- **Frontend**: React, JavaScript, HTML, CSS
 
-- [latercart](https://github.com/bonitac/latercart)
-- [Cards-Against-the-Internet](https://github.com/csx773/Cards-Against-the-Internet)
-- [Jetify](https://github.com/shadeying/Jetify)
-- [watchpoll](https://github.com/grey275/watchpoll)
-- [StartDuck](https://github.com/JerChuang/StartDuck)
-- [Change-App](https://github.com/ZHShang/Change-App)
+## Prerequisites
 
-## Using the boilerplate
+Ensure you have the following software installed:
 
-First, fork this boilerplate so you get your own copy of it. Once you have done that, you can clone your new repo to your machine, and get started.
+- **Ruby** (version 2.7 or higher)
+- **Rails** (version 6 or higher)
+- **PostgreSQL** (version 10 or higher)
+- **Node.js** (version 12 or higher)
+- **npm**
 
-You need **TWO** terminals for this.
+## Getting Started
 
-In one terminal, run `bundle` to install the dependencies. Run `bin/rake db:setup` to create the databases (called rails_project_development by default). Run `bin/rails s` to run the server.
+### 1. Fork and Clone the Repository
 
-In the other terminal, `cd` into `client`. Run `npm install`. Rename the `.env.example` file to be called `.env`. Then run `npm start` and go to `localhost:3000` in your browser.
+- Fork the repository to get your own copy of it.
+- Clone the forked repo to your local machine:
 
-In the browser, you can click on the button and see the data get loaded.
+    \`\`\`bash
+    git clone https://github.com/your-username/movierat.git
+    cd movierat
+    \`\`\`
 
-If this doesn't work, please message me!
+### 2. Backend Setup (Rails API)
 
-## Next steps
+- Open a terminal in the project’s root directory.
+- Install the backend dependencies:
 
-From here, you can start working on your project!
+    \`\`\`bash
+    bundle install
+    \`\`\`
 
-On the Rails side, you may make new `resources` routes in your `routes.rb` file, e.g. :
+- **Database Setup**: Create and set up the database. This will create the necessary tables and seed any initial data:
 
-```rb
-namespace :api do
-  resources :dogs # to generate GET /api/dogs, POST /api/dogs, etc...
-end
-```
+    \`\`\`bash
+    bin/rake db:setup
+    \`\`\`
 
-Then you can make your various controllers, models, migrations, etc. as you need! The one funky thing is that instead of rendering an HTML view you'll be rendering JSON. [You can return anything from a Rails controller as JSON like this.](https://guides.rubyonrails.org/v5.2/layouts_and_rendering.html#rendering-json) See the example in my "tests_controller".
+    If you prefer breaking it into individual commands:
+    
+    \`\`\`bash
+    bin/rails db:create   # Creates the PostgreSQL database
+    bin/rails db:migrate  # Runs migrations and creates tables
+    bin/rails db:seed     # Seeds the database (optional)
+    \`\`\`
 
-On the React side, the important bit is that you make you make your AJAXy HTTP requests using something like `axios` or `superagent`. I've set this up to use `axios` already. Check the React code to see an example request being made on-click to the Rails server! You can make your HTTP requests to `/api/anything/you/want`, as long as the route exists on your Rails app.
+- Start the Rails server:
 
-**NOTE:** I recommend that you namespace all your routes under `api` on the Rails side! Look at how I've done that in the `routes.rb` file, and also how the `tests_controller` is written as:
+    \`\`\`bash
+    bin/rails s
+    \`\`\`
 
-```rb
-class Api::TestsController < ApplicationController
-```
+### 3. Frontend Setup (React)
 
-and it lives in the `api` folder! Put all your controllers in there!
+- Open a new terminal and \`cd\` into the \`client\` directory:
+
+    \`\`\`bash
+    cd client
+    \`\`\`
+
+- Install the frontend dependencies:
+
+    \`\`\`bash
+    npm install
+    \`\`\`
+
+- Rename the \`.env.example\` file to \`.env\` and configure the environment variables as necessary.
+
+- Start the React development server:
+
+    \`\`\`bash
+    npm start
+    \`\`\`
+
+### 4. Access the Application
+
+- Open your browser and navigate to:
+
+    \`\`\`
+    http://localhost:3000
+    \`\`\`
+
+You should now see the MovieRat landing page with trending movies listed.
+
+### 5. PostgreSQL Management
+
+Ensure PostgreSQL is running before attempting to create or access the database. If PostgreSQL is not running, start it with:
+
+\`\`\`bash
+sudo service postgresql start
+\`\`\`
+
+## Additional Information
+
+- The \`.env\` file in the \`client\` folder holds environment variables necessary for the frontend React app to run properly.
+
+## Folder Structure
+
+\`\`\`
+movierat/
+│
+├── app/                # Rails backend (models, controllers, views)
+├── client/             # React frontend
+│   ├── public/         # Public files (HTML, etc.)
+│   ├── src/            # Frontend source code (React components, styles)
+│   └── .env.example    # Sample environment variable file for frontend
+│
+├── config/             # Configuration files for Rails
+├── db/                 # Database migrations and seeds
+├── Gemfile             # Backend Ruby gem dependencies
+└── package.json        # Frontend Node.js dependencies
+\`\`\`
+
+
 
 ## Deployment to Heroku
 
@@ -80,7 +152,3 @@ Once it's deployed, you can run the following commands to manage your app:
 There are other commands, but these are good to get you started!
 
 To make your app work properly with React Router (if you end up using it) on Heroku, I've added a special route to the `routes.rb` file (`get '*path' ... `).
-
-## Contact
-
-Please contact me at `nima.boscarino@gmail.com` if you have any questions or requests, or post an issue to this repo.
