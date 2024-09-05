@@ -52,11 +52,11 @@ Ensure you have the following software installed:
 - Fork the repository to get your own copy of it.
 - Clone the forked repo to your local machine:
 
-    \`\`\`bash
+    \`\`\`
     git clone https://github.com/your-username/movierat.git
     \`\`\`
 
-    \`\`\`bash
+    \`\`\`
     cd movierat
     \`\`\`
 
@@ -65,19 +65,19 @@ Ensure you have the following software installed:
 - Open a terminal in the project’s root directory.
 - Install the backend dependencies:
 
-    \`\`\`bash
+    \`\`\`
     bundle install
     \`\`\`
 
 - **Database Setup**: Create and set up the database. This will create the necessary tables and seed any initial data:
 
-    \`\`\`bash
+    \`\`\`
     bin/rake db:setup
     \`\`\`
 
     If you prefer breaking it into individual commands:
     
-    \`\`\`bash
+    \`\`\`
     bin/rails db:create   # Creates the PostgreSQL database
     bin/rails db:migrate  # Runs migrations and creates tables
     bin/rails db:seed     # Seeds the database (optional)
@@ -85,7 +85,7 @@ Ensure you have the following software installed:
 
 - Start the Rails server:
 
-    \`\`\`bash
+    \`\`\`
     bin/rails s
     \`\`\`
 
@@ -93,13 +93,13 @@ Ensure you have the following software installed:
 
 - Open a new terminal and \`cd\` into the \`client\` directory:
 
-    \`\`\`bash
+    \`\`\`
     cd client
     \`\`\`
 
 - Install the frontend dependencies:
 
-    \`\`\`bash
+    \`\`\`
     npm install
     \`\`\`
 
@@ -107,7 +107,7 @@ Ensure you have the following software installed:
 
 - Start the React development server:
 
-    \`\`\`bash
+    \`\`\`
     npm start
     \`\`\`
 
