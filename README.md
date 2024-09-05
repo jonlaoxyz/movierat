@@ -13,33 +13,20 @@ This project uses Rails for the backend, with PostgreSQL as the database, and Re
 - **User Authentication**: Secure login system, allowing users to have personalized movie lists.
 
 ## Screenshots Of MovieRat
-<div style="text-align: center;">
-  <img src="https://github.com/jonlaoxyz/movierat/blob/master/client/images/Landing%20page%20logged%20in.png?raw=true" alt="Landing Page" width="75%" />
-</div>
+| ![Landing Page](https://github.com/jonlaoxyz/movierat/blob/master/client/images/Landing%20page%20logged%20in.png?raw=true) |
+|:---:|
 
-<hr />
+| ![Search](client/images/Search.png) |
+|:---:|
 
-<div style="text-align: center;">
-  <img src="client/images/Search.png" alt="Search" width="75%" />
-</div>
+| ![Watchlist](client/images/watchlist.png) |
+|:---:|
 
-<hr />
+| ![Favourites](client/images/favourites.png) |
+|:---:|
 
-<div style="text-align: center;">
-  <img src="client/images/watchlist.png" alt="Watchlist" width="75%" />
-</div>
-
-<hr />
-
-<div style="text-align: center;">
-  <img src="client/images/favourites.png" alt="Favourites" width="75%" />
-</div>
-
-<hr />
-
-<div style="text-align: center;">
-  <img src="client/images/watched.png" alt="Watched" width="75%" />
-</div>
+| ![Watched](client/images/watched.png) |
+|:---:|
 
 
 
