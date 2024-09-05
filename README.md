@@ -12,6 +12,9 @@ This project uses Rails for the backend, with PostgreSQL as the database, and Re
 - **Search Functionality**: Search for movies and add them to your watchlist.
 - **User Authentication**: Secure login system, allowing users to have personalized movie lists.
 
+## Screenshots Of MovieRat
+
+
 ## Technologies Used
 
 - **Backend**: Ruby on Rails, PostgreSQL
@@ -104,29 +107,13 @@ You should now see the MovieRat landing page with trending movies listed.
 
 Ensure PostgreSQL is running before attempting to create or access the database. If PostgreSQL is not running, start it with:
 
-**sudo service postgresql start**
+\`\`\`
+sudo service postgresql start
+\`\`\`
 
 ## Additional Information
 
 - The \`.env\` file in the \`client\` folder holds environment variables necessary for the frontend React app to run properly.
-
-## Folder Structure
-
-\`\`\`
-movierat/
-│
-├── app/                # Rails backend (models, controllers, views)
-├── client/             # React frontend
-│   ├── public/         # Public files (HTML, etc.)
-│   ├── src/            # Frontend source code (React components, styles)
-│   └── .env.example    # Sample environment variable file for frontend
-│
-├── config/             # Configuration files for Rails
-├── db/                 # Database migrations and seeds
-├── Gemfile             # Backend Ruby gem dependencies
-└── package.json        # Frontend Node.js dependencies
-\`\`\`
-
 
 
 ## Deployment to Heroku
